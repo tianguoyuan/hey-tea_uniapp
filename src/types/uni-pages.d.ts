@@ -5,16 +5,16 @@
 
 interface NavigateToOptions {
   url: "/pages/index/index" |
-       "/pages/kind/kind" |
-       "/pages/message/message" |
-       "/pages/publish/publish" |
+       "/pages/coupon/coupon" |
+       "/pages/market/market" |
+       "/pages/order/order" |
        "/pages/user/user" |
        "/pages-sub/webview/webview";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
 interface SwitchTabOptions {
-  url: "/pages/index/index" | "/pages/kind/kind" | "/pages/publish/publish" | "/pages/message/message" | "/pages/user/user"
+  url: "/pages/index/index" | "/pages/order/order" | "/pages/market/market" | "/pages/coupon/coupon" | "/pages/user/user"
 }
 
 type ReLaunchOptions = NavigateToOptions | SwitchTabOptions;

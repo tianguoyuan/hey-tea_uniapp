@@ -5,27 +5,26 @@ import TnTabbarItem from '@tuniao/tnui-vue3-uniapp/components/tabbar/src/tabbar-
 import { useTabbarStore } from '@/store/tabbar'
 import IconHome from '@/assets/icons/home.svg'
 import IconHomeActive from '@/assets/icons/homeActive.svg'
-import IconAlbum from '@/assets/icons/album.svg'
-import IconAlbumActive from '@/assets/icons/albumActive.svg'
-import IconMessage from '@/assets/icons/message.svg'
-import IconMessageActive from '@/assets/icons/messageActive.svg'
+import IconMarket from '@/assets/icons/market.svg'
+import IconMarketActive from '@/assets/icons/marketActive.svg'
 import IconUser from '@/assets/icons/user.svg'
 import IconUserActive from '@/assets/icons/userActive.svg'
-import IconPublish from '@/assets/icons/publish.svg'
-import { getSafeArea } from '@/utils'
-
+import IconOrder from '@/assets/icons/order.svg'
+import IconOrderActive from '@/assets/icons/orderActive.svg'
+import IconCoupon from '@/assets/icons/coupon.svg'
+import IconCouponActive from '@/assets/icons/couponActive.svg'
 const tabbarStore = useTabbarStore()
 
 const tabbarList = [
   { title: '首页', icon: IconHome, activeIcon: IconHomeActive, path: '/pages/index/index' },
-  { title: '海蝶', icon: IconAlbum, activeIcon: IconAlbumActive, path: '/pages/kind/kind' },
-  { icon: IconPublish, path: '/pages/publish/publish' },
+  { title: '点单', icon: IconOrder, activeIcon: IconOrderActive, path: '/pages/order/order' },
   {
-    title: '动态',
-    icon: IconMessage,
-    activeIcon: IconMessageActive,
-    path: '/pages/message/message',
+    title: '百货',
+    icon: IconMarket,
+    activeIcon: IconMarketActive,
+    path: '/pages/market/market',
   },
+  { title: '金喜卡', icon: IconCoupon, activeIcon: IconCouponActive, path: '/pages/coupon/coupon' },
   { title: '我的', icon: IconUser, activeIcon: IconUserActive, path: '/pages/user/user' },
 ]
 type PathType = (typeof tabbarList)[number]['path']
@@ -57,7 +56,7 @@ function pageTo(index: number) {
     :model-value="tabbarStore.tabbarIndex"
     fixed
     :bg-color="ColorEnum.MAIN_COLOR"
-    active-color="#fff"
+    active-color="#000"
     safe-area-inset-bottom
     :top-shadow="props.topShadow"
     placeholder

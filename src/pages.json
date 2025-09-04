@@ -27,13 +27,13 @@
         "pagePath": "pages/index/index"
       },
       {
-        "pagePath": "pages/kind/kind"
+        "pagePath": "pages/order/order"
       },
       {
-        "pagePath": "pages/publish/publish"
+        "pagePath": "pages/market/market"
       },
       {
-        "pagePath": "pages/message/message"
+        "pagePath": "pages/coupon/coupon"
       },
       {
         "pagePath": "pages/user/user"
@@ -52,37 +52,39 @@
       "needLogin": false
     },
     {
-      "path": "pages/kind/kind",
-      "type": "page",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "海蝶"
-      }
-    },
-    {
-      "path": "pages/message/message",
-      "type": "page",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "动态"
-      }
-    },
-    {
-      "path": "pages/publish/publish",
+      "path": "pages/coupon/coupon",
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "index"
-      },
-      "needLogin": false
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/market/market",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/order/order",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
     },
     {
       "path": "pages/user/user",
       "type": "page",
+      "layout": "default",
       "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
       }
     }
   ],

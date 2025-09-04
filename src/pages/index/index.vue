@@ -1,79 +1,164 @@
 <script lang="ts" setup>
-import Navbar from '@/components/Navbar.vue'
-import Tabbar from '@/components/Tabbar.vue'
 import PLATFORM from '@/utils/platform'
-import TnSwiper from '@tuniao/tnui-vue3-uniapp/components/swiper/src/swiper.vue'
-import Recommend from './components/Recommend.vue'
-import Record from './components/Record.vue'
-import Artist from './components/Artist.vue'
-import RecordCompany from './components/RecordCompany.vue'
-import RankingList from './components/RankingList.vue'
-import { getNavbarTop, getSafeArea } from '@/utils'
+import Tabbar from '@/components/Tabbar.vue'
+import SplashScreen from './components/SplashScreen.vue'
+//
+onLoad(() => PLATFORM.isApp && uni.hideTabBar())
 
-onLoad(() => {
-  if (PLATFORM.isApp) uni.hideTabBar()
-})
-
-function toDashboard() {
-  uni.redirectTo({
-    url: '/pages/dashboard',
-  })
-}
-
-const homeTabList = ref([
-  { label: '推荐', key: 'recommend', active: true },
-  { label: '唱片', key: 'record', active: false },
-  { label: '艺术家', key: 'artist', active: false },
-  { label: '唱片公司', key: 'recordCompany', active: false },
-  { label: '榜单', key: 'rankingList', active: false },
-])
-function tabClick(item: (typeof homeTabList.value)[number]) {
-  homeTabList.value.forEach((v) => (v.active = false))
-  item.active = true
-}
-type HomeTabListKey = 'recommend' | 'record' | 'artist' | 'recordCompany' | 'rankingList'
-const currentTabKey = computed(() => homeTabList.value.find((v) => v.active).key as HomeTabListKey)
+const isShowSplashScreen = ref(false)
 </script>
 
 <template>
-  <view class="px-5 pt-safe">
-    <view class="sticky bg-#1a1d25 top-0 z-10">
-      <view v-if="!PLATFORM.isMp" class="h-4" />
-      <view v-if="PLATFORM.isMpWeixin" :style="{ height: getNavbarTop() + 'px' }"></view>
-      <view class="pb-4 flex justify-between items-center">
-        <view class="flex">
-          <view
-            v-for="item in homeTabList"
-            :key="item.label"
-            class="color-#818387 mr-3 relative text-3"
-            :class="[item.active ? 'color-#fff text-3.5' : '']"
-            @click="tabClick(item)"
-          >
-            <view>{{ item.label }}</view>
-            <view
-              v-show="item.active"
-              class="absolute h-0.5 left--1.5 right--1.5 bottom--3 bg-#E8CDA7"
-            ></view>
-          </view>
+  <view class="bg-#F7F4EF">
+    <image src="@/assets/icons/indexTopCover.svg" class="w-full" mode="widthFix" />
+
+    <!-- 个人信息, 我的权益 -->
+    <view class="mx-3 bg-white mt--5 p-4 z-1 relative rounded-1">
+      <view class="flex justify-between">
+        <view class="flex items-center">
+          <text class="text-4">茶茶</text>
+          <text class="bg-#AC9FB3 color-#fff ml-1 px-1 text-2.5 rounded-1 line-height-4">
+            见习贵宾
+          </text>
         </view>
         <view>
-          <image class="w-4 h-4" src="../../assets/icons/search.svg" />
+          喜茶券
+          <text class="text-4 font-600">0</text>
+          张
+        </view>
+      </view>
+      <view class="h-1px bg-#e7e7e7 mt-3"></view>
+      <view class="mt-3 flex justify-between items-center">
+        <view>
+          <text class="color-#CB9964">我的权益</text>
+          <text class="ml-1 color-#999999">您有0项待使用权，开启提醒不错过</text>
+        </view>
+        <view>
+          <image src="@/assets/icons/arrowRight.svg" class="w-5" mode="widthFix" />
         </view>
       </view>
     </view>
-    <Recommend v-show="currentTabKey === 'recommend'" />
-    <Record v-show="currentTabKey === 'record'" />
-    <Artist v-show="currentTabKey === 'artist'" />
-    <RecordCompany v-show="currentTabKey === 'recordCompany'" />
-    <RankingList v-show="currentTabKey === 'rankingList'" />
-    <!-- 占据空白位置 -->
-    <view class="h-5" />
+
+    <!-- 下单卡片 -->
+    <view class="mx-3 bg-white mt-2 p-4 z-1 relative rounded-1">
+      <view class="flex justify-center items-center pb-4">
+        <view>
+          <view class="text-6 font-600">到店取</view>
+          <view class="mt-0.5 color-#666666 text-3">提前下单免排队</view>
+        </view>
+        <view class="h-8.5 w-1px bg-#C9C9C9 mx-10"></view>
+        <view class="relative">
+          <image
+            src="@/assets/icons/indexXiWaiSong.svg"
+            class="h-17 absolute left--13 bottom--3"
+            mode="heightFix"
+          />
+          <view class="text-6 font-600">喜外送</view>
+          <view class="mt-0.5 color-#666666 text-3">随时送喜到家</view>
+        </view>
+      </view>
+      <view class="mt-4 flex px-2">
+        <view class="flex-1 flex justify-center items-center flex-col">
+          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS1.svg" />
+          <view class="mt-1.5">配方原料揭秘</view>
+        </view>
+        <view class="flex-1 flex justify-center items-center flex-col">
+          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS2.svg" />
+          <view class="mt-1.5">喜卡</view>
+        </view>
+        <view class="flex-1 flex justify-center items-center flex-col">
+          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS3.svg" />
+          <view class="mt-1.5">成为合伙人</view>
+        </view>
+        <view class="flex-1 flex justify-center items-center flex-col">
+          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS4.svg" />
+          <view class="mt-1.5">阿喜团餐</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 邀请卡片 -->
+    <view class="h-42 flex justify-between mx-3 mt-2">
+      <view class="mr-2 h-full bg-#F2EAD7 flex-1 pl-3 pt-2 pb-4 relative">
+        <view class="text-4 font-600">邀请有礼</view>
+        <view class="flex items-end pt-1">
+          <view class="">
+            <text class="color-#CB9964 line-height-3">邀好友得</text>
+            <text class="color-#CB9964 text-4.5 line-height-4.5">5</text>
+            <text class="color-#CB9964 text-3">元红包</text>
+          </view>
+          <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+        </view>
+        <view
+          class="absolute left-3 bottom-4 bg-#ED8735 color-white px-2.5 line-height-5.5 rounded-full"
+        >
+          立即邀请
+        </view>
+        <image
+          class="absolute right-0 bottom-0 h-28"
+          src="@/assets/icons/indexYQCover1.svg"
+          mode="heightFix"
+        />
+      </view>
+
+      <view class="flex-1 flex-col flex">
+        <view class="bg-#F2DDCA flex-1 pl-3 pt-2 relative">
+          <view class="text-4 font-600">加熟客群</view>
+          <view class="flex items-center pt-1">
+            <view class="color-#CB9964 line-height-5">领18元入群礼</view>
+            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+          </view>
+
+          <image
+            class="absolute right-0 bottom-0 h-full"
+            mode="heightFix"
+            src="@/assets/icons/indexYQCover2.svg"
+          />
+        </view>
+        <view class="bg-#DDE7DC flex-1 mt-2 pl-3 pt-2 relative">
+          <view class="text-4 font-600">喜钱袋</view>
+          <view class="flex items-center pt-1">
+            <view class="color-#CB9964 line-height-5">充值享赠饮券</view>
+            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+          </view>
+
+          <image
+            class="absolute right-0 bottom-0 h-full"
+            mode="heightFix"
+            src="@/assets/icons/indexYQCover3.svg"
+          />
+        </view>
+      </view>
+    </view>
+
+    <!-- 请喝活动 -->
+    <view class="bg-white mt-3 mx-3">
+      <image src="@/assets/icons/indexQHCover1.svg" mode="widthFix" class="w-full" />
+      <view class="py-4 px-3">
+        <view class="text-4 font-600">又一年杨梅「鲜」，请喝10万杯～</view>
+        <view>第五年杨梅季，真果肉，无小料，轻负担</view>
+      </view>
+    </view>
+
+    <!-- 介绍文本 -->
+    <view class="bg-#F3EBD6 mt-3 mx-3 px-3 py-5">
+      <view class="color-#9B6944 text-6 pl-5 line-height-8 font-600 tracking-0.5">
+        <view>开新</view>
+        <view>创茶</view>
+        <view>者饮</view>
+      </view>
+    </view>
+
+    <SplashScreen v-model:visible="isShowSplashScreen" />
+    <Tabbar tabbar-path="/pages/index/index" />
   </view>
-  <Tabbar tabbar-path="/pages/index/index" />
 </template>
 
 <style lang="scss" scoped>
 //
+page {
+  background-color: #f7f4ef;
+}
 </style>
 
 <route lang="json5" type="home">
