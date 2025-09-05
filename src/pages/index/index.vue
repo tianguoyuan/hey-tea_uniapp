@@ -57,7 +57,7 @@ const isShowSplashScreen = ref(false)
           <view class="mt-0.5 color-#666666 text-3">随时送喜到家</view>
         </view>
       </view>
-      <view class="mt-4 flex px-2">
+      <view class="mt-4 flex">
         <view class="flex-1 flex justify-center items-center flex-col">
           <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS1.svg" />
           <view class="mt-1.5">配方原料揭秘</view>
@@ -85,9 +85,11 @@ const isShowSplashScreen = ref(false)
           <view class="">
             <text class="color-#CB9964 line-height-3">邀好友得</text>
             <text class="color-#CB9964 text-4.5 line-height-4.5">5</text>
-            <text class="color-#CB9964 text-3">元红包</text>
           </view>
-          <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+          <view class="flex items-center">
+            <text class="color-#CB9964 text-3">元红包</text>
+            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+          </view>
         </view>
         <view
           class="absolute left-3 bottom-4 bg-#ED8735 color-white px-2.5 line-height-5.5 rounded-full"
@@ -146,6 +148,33 @@ const isShowSplashScreen = ref(false)
         <view>开新</view>
         <view>创茶</view>
         <view>者饮</view>
+      </view>
+
+      <view class="color-#F89D54 text-4.5 font-600 pl-17.5 mt--4">喜</view>
+
+      <view class="flex justify-between mt-6 relative">
+        <view class="color-#CB9964">
+          2012年，喜茶使用真原茶、真牛乳首创芝士茶 推动行业原料升级，成为新茶饮的开创者
+        </view>
+        <view class="ml-6">
+          <image class="w-5 h-5" src="@/assets/icons/indexJSRightArrow.svg" />
+        </view>
+
+        <view
+          class="absolute border-#9B6944/20 h-38 border border-solid rounded-100% bottom--4 left--3 right--3"
+        ></view>
+      </view>
+
+      <view class="bg-#E1BFB2 h-1px mt-8" />
+
+      <view class="text-4 color-#9B6944 mt-8">成为「喜茶事业合伙人」</view>
+      <view class="flex mt-1">
+        <view class="color-#CB9964">
+          与我们携手，将真品质的茶饮和激发喜悦的品 牌，带给更多的用户
+        </view>
+        <view class="ml-6">
+          <image class="w-5 h-5" src="@/assets/icons/indexJSRightArrow.svg" />
+        </view>
       </view>
     </view>
 
