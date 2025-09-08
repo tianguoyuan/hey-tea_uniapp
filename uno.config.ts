@@ -78,6 +78,7 @@ export default defineConfig({
     ['pb-safe', { 'padding-bottom': 'env(safe-area-inset-bottom)' }],
     ['bg-main', { 'background-color': '#40ae36' }],
     ['color-main', { color: '#40ae36' }],
+    ['hasClickBox', { border: '1px dashed #000' }],
   ],
 })
 

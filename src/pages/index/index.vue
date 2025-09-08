@@ -6,6 +6,13 @@ import SplashScreen from './components/SplashScreen.vue'
 onLoad(() => PLATFORM.isApp && uni.hideTabBar())
 
 const isShowSplashScreen = ref(false)
+
+// 打开喜卡页面
+function pageToIndexCoupon() {
+  uni.navigateTo({
+    url: '/pages/index/coupon',
+  })
+}
 </script>
 
 <template>
@@ -62,7 +69,10 @@ const isShowSplashScreen = ref(false)
           <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS1.svg" />
           <view class="mt-1.5">配方原料揭秘</view>
         </view>
-        <view class="flex-1 flex justify-center items-center flex-col">
+        <view
+          class="hasClickBox flex-1 flex justify-center items-center flex-col"
+          @click="pageToIndexCoupon"
+        >
           <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS2.svg" />
           <view class="mt-1.5">喜卡</view>
         </view>

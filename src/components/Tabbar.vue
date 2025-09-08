@@ -11,8 +11,8 @@ import IconUser from '@/assets/icons/user.svg'
 import IconUserActive from '@/assets/icons/userActive.svg'
 import IconOrder from '@/assets/icons/order.svg'
 import IconOrderActive from '@/assets/icons/orderActive.svg'
-import IconCoupon from '@/assets/icons/coupon.svg'
-import IconCouponActive from '@/assets/icons/couponActive.svg'
+import IconGoldCoupon from '@/assets/icons/goldCoupon.svg'
+import IconGoldCouponActive from '@/assets/icons/goldCouponActive.svg'
 const tabbarStore = useTabbarStore()
 
 const tabbarList = [
@@ -24,7 +24,12 @@ const tabbarList = [
     activeIcon: IconMarketActive,
     path: '/pages/market/market',
   },
-  { title: '金喜卡', icon: IconCoupon, activeIcon: IconCouponActive, path: '/pages/coupon/coupon' },
+  {
+    title: '金喜卡',
+    icon: IconGoldCoupon,
+    activeIcon: IconGoldCouponActive,
+    path: '/pages/goldCoupon/goldCoupon',
+  },
   { title: '我的', icon: IconUser, activeIcon: IconUserActive, path: '/pages/user/user' },
 ]
 type PathType = (typeof tabbarList)[number]['path']

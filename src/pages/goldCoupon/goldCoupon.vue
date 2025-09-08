@@ -4,7 +4,7 @@ import Tabbar from '@/components/Tabbar.vue'
 
 <template>
   <view class="">
-    <Tabbar tabbar-path="/pages/coupon/coupon" />
+    <Tabbar tabbar-path="/pages/goldCoupon/goldCoupon" />
   </view>
 </template>
 

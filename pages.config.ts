@@ -10,7 +10,7 @@ export default defineUniPages({
   globalStyle: {
     navigationStyle: 'default',
     navigationBarTitleText: VITE_APP_TITLE,
-    navigationBarBackgroundColor: '#f8f8f8',
+    navigationBarBackgroundColor: '#FFFFFF',
     navigationBarTextStyle: 'black',
     backgroundColor: '#FFFFFF',
   },
@@ -35,8 +35,12 @@ export default defineUniPages({
       { pagePath: 'pages/index/index' },
       { pagePath: 'pages/order/order' },
       { pagePath: 'pages/market/market' },
-      { pagePath: 'pages/coupon/coupon' },
+      { pagePath: 'pages/goldCoupon/goldCoupon' },
       { pagePath: 'pages/user/user' },
     ],
   },
+  pages: [
+    // 喜卡
+    { path: 'pages/index/coupon' },
+  ],
 })

@@ -2,7 +2,7 @@
   "globalStyle": {
     "navigationStyle": "default",
     "navigationBarTitleText": "音乐app",
-    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFFFFF"
   },
@@ -33,7 +33,7 @@
         "pagePath": "pages/market/market"
       },
       {
-        "pagePath": "pages/coupon/coupon"
+        "pagePath": "pages/goldCoupon/goldCoupon"
       },
       {
         "pagePath": "pages/user/user"
@@ -52,12 +52,21 @@
       "needLogin": false
     },
     {
-      "path": "pages/coupon/coupon",
+      "path": "pages/goldCoupon/goldCoupon",
       "type": "page",
       "layout": "default",
       "style": {
         "navigationBarTitleText": "",
         "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/index/coupon",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "white",
+        "navigationBarTitleText": "喜卡"
       }
     },
     {
