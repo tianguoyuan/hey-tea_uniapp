@@ -70,6 +70,24 @@
       }
     },
     {
+      "path": "pages/index/exchangeCoupon",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "兑换喜卡"
+      }
+    },
+    {
+      "path": "pages/index/payCouponCityMore",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": ""
+      }
+    },
+    {
       "path": "pages/market/market",
       "type": "page",
       "layout": "default",

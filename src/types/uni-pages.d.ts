@@ -7,6 +7,8 @@ interface NavigateToOptions {
   url: "/pages/index/index" |
        "/pages/goldCoupon/goldCoupon" |
        "/pages/index/coupon" |
+       "/pages/index/exchangeCoupon" |
+       "/pages/index/payCouponCityMore" |
        "/pages/market/market" |
        "/pages/order/order" |
        "/pages/user/user" |

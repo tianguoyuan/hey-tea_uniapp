@@ -39,8 +39,4 @@ export default defineUniPages({
       { pagePath: 'pages/user/user' },
     ],
   },
-  pages: [
-    // 喜卡
-    { path: 'pages/index/coupon' },
-  ],
 })
