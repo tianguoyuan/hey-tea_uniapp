@@ -193,13 +193,6 @@ function pageToIndexCoupon() {
   </view>
 </template>
 
-<style lang="scss" scoped>
-//
-page {
-  background-color: #f7f4ef;
-}
-</style>
-
 <route lang="json5" type="home">
 {
   layout: 'default',
