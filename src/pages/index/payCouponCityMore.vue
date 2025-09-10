@@ -20,7 +20,7 @@ function changePriceListIndex(i: number) {
 <template>
   <view class="">
     <view class="bg-#F4F4F4 pb-8">
-      <view class="mt-3 text-6 ml-5 font-600">城市系列</view>
+      <view class="pt-3 text-6 ml-5 font-600">城市系列</view>
 
       <image class="w-full" mode="widthFix" src="@/assets/icons/indexCouponCityMore.svg" />
 
@@ -94,7 +94,7 @@ function changePriceListIndex(i: number) {
   layout: 'default',
   style: {
     navigationStyle: 'default',
-    navigationBarTitleText: '',
+    navigationBarTitleText: '城市系列',
   },
 }
 </route>

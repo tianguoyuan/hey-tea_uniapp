@@ -56,7 +56,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "金喜卡",
         "navigationStyle": "custom"
       }
     },
@@ -84,7 +84,7 @@
       "layout": "default",
       "style": {
         "navigationStyle": "default",
-        "navigationBarTitleText": ""
+        "navigationBarTitleText": "城市系列"
       }
     },
     {
