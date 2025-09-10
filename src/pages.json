@@ -106,11 +106,38 @@
       }
     },
     {
+      "path": "pages/user/happyMoneyBag",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "喜钱袋"
+      }
+    },
+    {
+      "path": "pages/user/myOrder",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "我的订单"
+      }
+    },
+    {
+      "path": "pages/user/pointsMall",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "default",
+        "navigationBarTitleText": "积分商城"
+      }
+    },
+    {
       "path": "pages/user/user",
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "我的",
         "navigationStyle": "custom"
       }
     }

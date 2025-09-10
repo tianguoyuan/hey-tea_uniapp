@@ -11,6 +11,9 @@ interface NavigateToOptions {
        "/pages/index/payCouponCityMore" |
        "/pages/market/market" |
        "/pages/order/order" |
+       "/pages/user/happyMoneyBag" |
+       "/pages/user/myOrder" |
+       "/pages/user/pointsMall" |
        "/pages/user/user" |
        "/pages-sub/webview/webview";
 }
