@@ -8,6 +8,8 @@ const props = withDefaults(
     showHomeIcon: boolean
     bottomShadow: boolean
     showBorder: boolean
+    bgColor: string
+    textColor: string
   }>(),
   {
     title: '',
@@ -15,6 +17,8 @@ const props = withDefaults(
     showHomeIcon: false,
     bottomShadow: true,
     showBorder: false,
+    bgColor: 'white',
+    textColor: 'black',
   },
 )
 
@@ -25,7 +29,14 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <TnNavbar height="44px" fixed :bottom-shadow="props.bottomShadow">
+  <TnNavbar
+    height="44px"
+    fixed
+    :bottom-shadow="props.bottomShadow"
+    :bg-color="props.bgColor"
+    :text-color="props.textColor"
+  >
+    <slot name="title" />
     {{ props.title }}
 
     <!-- border -->

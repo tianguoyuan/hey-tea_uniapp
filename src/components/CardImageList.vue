@@ -5,6 +5,7 @@ const props = defineProps<{
     imagePath: string
     title?: string
     price?: string
+    [key: string]: any
   }[]
   showMore?: boolean
 }>()
@@ -40,6 +41,8 @@ const emits = defineEmits<{
 
           <image src="@/assets/icons/addIcon.svg" class="w-3.5" mode="widthFix" />
         </view>
+
+        <slot name="footer" :item="item" />
       </view>
     </view>
 

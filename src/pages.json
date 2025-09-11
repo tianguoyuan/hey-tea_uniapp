@@ -110,7 +110,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationStyle": "default",
+        "navigationStyle": "custom",
         "navigationBarTitleText": "喜钱袋"
       }
     },
@@ -119,7 +119,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationStyle": "default",
+        "navigationStyle": "custom",
         "navigationBarTitleText": "我的订单"
       }
     },
