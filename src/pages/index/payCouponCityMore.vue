@@ -9,6 +9,11 @@ const bannerList = ref([
   { imagePath: payCouponCityMoreBanner3 },
   { imagePath: payCouponCityMoreBanner4 },
 ])
+const bannerIndex = ref(1)
+const currentImg = computed(() => bannerList.value[bannerIndex.value]?.imagePath)
+function changeBannerIndex(i: number) {
+  bannerIndex.value = i
+}
 
 const priceList = ref([{ num: 30 }, { num: 66 }, { num: 100 }, { num: 500 }])
 const priceListIndex = ref(0)
@@ -22,16 +27,24 @@ function changePriceListIndex(i: number) {
     <view class="bg-#F4F4F4 pb-8">
       <view class="pt-3 text-6 ml-5 font-600">城市系列</view>
 
-      <image class="w-full" mode="widthFix" src="@/assets/icons/indexCouponCityMore.svg" />
+      <view class="m-5">
+        <image class="w-full h-50" :src="currentImg" />
+      </view>
 
       <view class="flex flex-nowrap overflow-auto pl-5">
-        <image
+        <view
           v-for="(item, index) in bannerList"
           :key="index"
-          :src="item.imagePath"
-          class="pr-3 w-25 flex-shrink-0"
-          mode="widthFix"
-        />
+          class="mr-3 rounded-2.5 flex border-2 border-solid p-0.5"
+          :class="[bannerIndex === index ? ' border-amber' : 'border-transparent']"
+        >
+          <image
+            :src="item.imagePath"
+            class="w-25 flex-shrink-0 translate-y-1px"
+            mode="widthFix"
+            @click="changeBannerIndex(index)"
+          />
+        </view>
       </view>
     </view>
 
