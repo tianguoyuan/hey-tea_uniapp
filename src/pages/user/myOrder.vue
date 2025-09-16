@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import Navbar from '@/components/Navbar.vue'
 import { useTabbarStore } from '@/store/tabbar'
-import { TnTabs, TnTabsItem } from '@tuniao/tnui-vue3-uniapp'
+import { TnTabs, TnTabsItem, useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
+const { systemScreenInfo } = useUniAppSystemRectInfo()
+console.log('systemScreenInfo', systemScreenInfo)
 
 const currentTabIndex = ref(0)
 onLoad((query) => {
@@ -38,15 +40,19 @@ function clickHomeIcon() {
     @click-home-icon="clickHomeIcon"
   >
     <template #title>
+      <view class="flex-1"></view>
       <view
-        class="h-8 border-#999 border border-solid px-3 rounded-full flex justify-center items-center mr--23.5"
+        class="h-8 border-#999 border border-solid px-3 rounded-full flex justify-center items-center"
       >
         <image src="@/assets/icons/print.svg" class="h-3" mode="heightFix" />
         <text class="ml-1">开发票</text>
       </view>
     </template>
   </Navbar>
-  <view class="bg-#f6f6f6 min-h-[calc(100vh-44px)]">
+  <view
+    class="bg-#f6f6f6"
+    :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 44px)`, color: '#999' }"
+  >
     <TnTabs v-model="currentTabIndex" :scroll="false" active-color="#1A1A1A" color="#999999">
       <TnTabsItem v-for="(item, index) in tabsData" :key="index" :title="item.text" />
       <template #bar>

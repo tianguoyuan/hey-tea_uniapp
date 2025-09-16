@@ -10,6 +10,9 @@ const props = withDefaults(
     showBorder: boolean
     bgColor: string
     textColor: string
+    frosted: boolean
+    opacity: number
+    placeholder: boolean
   }>(),
   {
     title: '',
@@ -19,6 +22,9 @@ const props = withDefaults(
     showBorder: false,
     bgColor: 'white',
     textColor: 'black',
+    frosted: false,
+    opacity: 1,
+    placeholder: true,
   },
 )
 
@@ -26,6 +32,8 @@ const emits = defineEmits<{
   clickBackIcon: []
   clickHomeIcon: []
 }>()
+
+const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
 </script>
 
 <template>
@@ -35,6 +43,9 @@ const emits = defineEmits<{
     :bottom-shadow="props.bottomShadow"
     :bg-color="props.bgColor"
     :text-color="props.textColor"
+    :frosted="props.frosted"
+    :opacity="props.opacity"
+    :placeholder="props.placeholder"
   >
     <slot name="title" />
     {{ props.title }}
@@ -46,6 +57,7 @@ const emits = defineEmits<{
     />
     <template #back>
       <view
+        v-if="showLeftBox"
         class="relative w-full h-full flex items-center justify-center rounded-full bg-[rgba(0,0,0,.15)] text-[15px] box-border"
         :class="[!props.showBackIcon || !props.showHomeIcon ? 'w-70%!' : '']"
       >

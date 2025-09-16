@@ -144,8 +144,17 @@
   ],
   "subPackages": [
     {
-      "root": "pages-sub",
+      "root": "pagesA",
       "pages": [
+        {
+          "path": "demo/demo",
+          "type": "page",
+          "layout": "default",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "demo"
+          }
+        },
         {
           "path": "webview/webview",
           "type": "page",

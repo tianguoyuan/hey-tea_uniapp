@@ -8,6 +8,9 @@ import userVipService5 from '@/assets/icons/userVipService5.svg'
 import userVipService6 from '@/assets/icons/userVipService6.svg'
 import userVipService7 from '@/assets/icons/userVipService7.svg'
 import userVipService8 from '@/assets/icons/userVipService8.svg'
+import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
+const { systemScreenInfo } = useUniAppSystemRectInfo()
+console.log('systemScreenInfo', systemScreenInfo)
 
 const myCouponList = ref([
   { num: '0', key: '', title: '喜茶券' },
@@ -47,7 +50,12 @@ function pageTo(key: string) {
 </script>
 
 <template>
-  <view class="bg-#F6F6F6 min-h-[calc(100vh-50px)]">
+  <view
+    class="bg-#F6F6F6"
+    :style="{
+      'min-height': `calc(${systemScreenInfo.height}px - 50px)`,
+    }"
+  >
     <view class="relative">
       <image src="@/assets/icons/userTopCover.svg" class="h-66" mode="heightFix" />
       <view class="absolute left-5 top-27 right-5">

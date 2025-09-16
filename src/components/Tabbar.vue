@@ -65,6 +65,7 @@ function pageTo(index: number) {
     safe-area-inset-bottom
     :top-shadow="props.topShadow"
     placeholder
+    height="50px"
   >
     <TnTabbarItem v-for="(item, index) in tabbarList" :key="index" @click="pageTo(index)">
       <template #default>
@@ -90,6 +91,6 @@ function pageTo(index: number) {
   </TnTabbar>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 //
 </style>

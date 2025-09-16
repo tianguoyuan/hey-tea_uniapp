@@ -8,6 +8,11 @@
   color: red;
 }
 
+// .tn-tabbar,
+// .tn-navbar {
+//   opacity: 0.3;
+// }
+
 :root,
 page {
   font-size: 24rpx;
@@ -15,6 +20,8 @@ page {
   color: #1a1a1a;
   /* 禁止双击放大 */
   touch-action: manipulation;
+  user-select: none;
+
   // background-color: #f8f9fa;
   background-color: #fff;
 
@@ -29,16 +36,17 @@ text {
   transition: all 100ms;
 }
 
-#container {
-  height: 100vh;
-}
-/* Avoid Chrome to see Safari hack */
-@supports (-webkit-touch-callout: none) {
-  #container {
-    /* The hack for Safari */
-    height: -webkit-fill-available;
-  }
-}
+// #container {
+//   height: 100vh;
+// }
+// /* Avoid Chrome to see Safari hack */
+// @supports (-webkit-touch-callout: none) {
+//   #container {
+//     /* The hack for Safari */
+//     // 作用：height: -webkit-fill-available 让元素填充其包含块的可用空间，类似于设置高度为100%，但更加灵活。
+//     height: -webkit-fill-available;
+//   }
+// }
 /* stylelint-disable selector-type-no-unknown */
 button::after {
   border: none;

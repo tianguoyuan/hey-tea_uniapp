@@ -15,7 +15,8 @@ interface NavigateToOptions {
        "/pages/user/myOrder" |
        "/pages/user/pointsMall" |
        "/pages/user/user" |
-       "/pages-sub/webview/webview";
+       "/pagesA/demo/demo" |
+       "/pagesA/webview/webview";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

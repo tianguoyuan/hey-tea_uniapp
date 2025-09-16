@@ -86,6 +86,9 @@ importers:
       qs:
         specifier: 6.5.3
         version: 6.5.3
+      throttle-debounce:
+        specifier: ^5.0.2
+        version: 5.0.2
       vue:
         specifier: 3.4.21
         version: 3.4.21(typescript@5.8.3)
@@ -6823,6 +6826,10 @@ packages:
 
   throat@6.0.2:
     resolution: {integrity: sha512-WKexMoJj3vEuK0yFEapj8y64V0A6xcuPuK9Gt1d0R+dzCSJc0lHqQytAbSB4cDAK0dWh4T0E2ETkoLE2WZ41OQ==}
+
+  throttle-debounce@5.0.2:
+    resolution: {integrity: sha512-B71/4oyj61iNH0KeCamLuE2rmKuTO5byTOSVwECM5FA7TiAiAW+UqTKZ9ERueC4qvgSttUhdmq1mXC3kJqGX7A==}
+    engines: {node: '>=12.22'}
 
   through2@2.0.5:
     resolution: {integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==}
@@ -15890,6 +15897,8 @@ snapshots:
   text-table@0.2.0: {}
 
   throat@6.0.2: {}
+
+  throttle-debounce@5.0.2: {}
 
   through2@2.0.5:
     dependencies:
