@@ -25,7 +25,7 @@ const productList = ref([
 
 <template>
   <view class="">
-    <view class="bg-#FFD495 relative pb-11 h-77">
+    <view class="bg-#FFD495 relative pb-11 h-77 overflow-hidden">
       <image
         src="@/assets/icons/goldCouponTopBg1.svg"
         class="h-77 left--48 top--4.5 absolute"

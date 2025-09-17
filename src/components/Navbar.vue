@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { TnIcon, TnNavbar } from '@tuniao/tnui-vue3-uniapp'
+import { TnIcon, TnNavbar, TnSticky, useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
+const { navBarInfo, navBarBoundingInfo, systemScreenInfo } = useUniAppSystemRectInfo()
 
 const props = withDefaults(
   defineProps<{
@@ -38,8 +39,8 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
 
 <template>
   <TnNavbar
-    height="44px"
     fixed
+    :status-height="navBarInfo.statusHeight"
     :bottom-shadow="props.bottomShadow"
     :bg-color="props.bgColor"
     :text-color="props.textColor"

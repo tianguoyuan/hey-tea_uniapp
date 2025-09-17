@@ -9,7 +9,9 @@ import userVipService6 from '@/assets/icons/userVipService6.svg'
 import userVipService7 from '@/assets/icons/userVipService7.svg'
 import userVipService8 from '@/assets/icons/userVipService8.svg'
 import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
-const { systemScreenInfo } = useUniAppSystemRectInfo()
+import PLATFORM from '@/utils/platform'
+const { systemScreenInfo, getSystemRectInfo } = useUniAppSystemRectInfo()
+getSystemRectInfo()
 console.log('systemScreenInfo', systemScreenInfo)
 
 const myCouponList = ref([
@@ -145,6 +147,7 @@ function pageTo(key: string) {
         </view>
       </view>
     </view>
+
     <Tabbar tabbar-path="/pages/user/user" />
   </view>
 </template>

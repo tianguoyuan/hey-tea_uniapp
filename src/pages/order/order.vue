@@ -11,7 +11,9 @@ import orderProduct2 from '@/assets/icons/orderProduct2.svg'
 import orderProduct3 from '@/assets/icons/orderProduct3.svg'
 import { debounce, throttle } from 'throttle-debounce'
 
-const { navBarInfo, navBarBoundingInfo, systemScreenInfo } = useUniAppSystemRectInfo()
+const { navBarInfo, navBarBoundingInfo, systemScreenInfo, getSystemRectInfo } =
+  useUniAppSystemRectInfo()
+getSystemRectInfo()
 
 console.log('navBarInfo', navBarInfo)
 console.log('navBarBoundingInfo', navBarBoundingInfo)

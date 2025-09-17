@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import Navbar from '@/components/Navbar.vue'
 import { useTabbarStore } from '@/store/tabbar'
+import PLATFORM from '@/utils/platform'
 import { TnTabs, TnTabsItem, useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
-const { systemScreenInfo } = useUniAppSystemRectInfo()
+const { systemScreenInfo, getSystemRectInfo } = useUniAppSystemRectInfo()
+getSystemRectInfo()
 console.log('systemScreenInfo', systemScreenInfo)
 
 const currentTabIndex = ref(0)
@@ -57,7 +59,10 @@ function clickHomeIcon() {
       <TnTabsItem v-for="(item, index) in tabsData" :key="index" :title="item.text" />
       <template #bar>
         <view class="custom-bar">
-          <view class="w-12 h-0.5 bg-#000"></view>
+          <view
+            class="w-12 h-0.5 bg-#000"
+            :class="PLATFORM.isH5 ? 'translate-x-0' : 'translate-x--50%'"
+          ></view>
         </view>
       </template>
     </TnTabs>

@@ -16,6 +16,7 @@ import xYFSImage1 from '@/assets/icons/indexCouponXYFSImage1.svg'
 import xYFSImage2 from '@/assets/icons/indexCouponXYFSImage2.svg'
 import xYFSImage3 from '@/assets/icons/indexCouponXYFSImage3.svg'
 import xYFSImage4 from '@/assets/icons/indexCouponXYFSImage4.svg'
+import PLATFORM from '@/utils/platform'
 
 const currentTabIndex = ref(0)
 onLoad((query) => {
@@ -74,7 +75,10 @@ function handleMoreClick() {
       <TnTabsItem v-for="(item, index) in tabsData" :key="index" :title="item.text" />
       <template #bar>
         <view class="custom-bar">
-          <view class="w-12 h-0.5 bg-#000"></view>
+          <view
+            class="w-12 h-0.5 bg-#000"
+            :class="PLATFORM.isH5 ? 'translate-x-0' : 'translate-x--50%'"
+          ></view>
         </view>
       </template>
     </TnTabs>

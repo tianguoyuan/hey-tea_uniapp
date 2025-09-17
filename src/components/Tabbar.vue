@@ -13,6 +13,7 @@ import IconOrder from '@/assets/icons/order.svg'
 import IconOrderActive from '@/assets/icons/orderActive.svg'
 import IconGoldCoupon from '@/assets/icons/goldCoupon.svg'
 import IconGoldCouponActive from '@/assets/icons/goldCouponActive.svg'
+import PLATFORM from '@/utils/platform'
 const tabbarStore = useTabbarStore()
 
 const tabbarList = [
@@ -56,6 +57,9 @@ function pageTo(index: number) {
 </script>
 
 <template>
+  <!-- h5多一个占位tabbar高度, 其它没有 -->
+  <view v-if="!PLATFORM.isH5" class="h-12.5" />
+
   <TnTabbar
     v-if="!tabbarStore.hideTabbar"
     :model-value="tabbarStore.tabbarIndex"

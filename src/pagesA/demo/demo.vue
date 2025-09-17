@@ -3,7 +3,8 @@ import orderBanner1 from '@/assets/icons/orderBanner1.svg'
 import orderBanner2 from '@/assets/icons/orderBanner2.svg'
 import orderBanner3 from '@/assets/icons/orderBanner3.svg'
 import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
-const { systemScreenInfo } = useUniAppSystemRectInfo()
+const { systemScreenInfo, getSystemRectInfo } = useUniAppSystemRectInfo()
+getSystemRectInfo()
 console.log('systemScreenInfo', systemScreenInfo)
 
 const list = [{ img: orderBanner1 }, { img: orderBanner2 }, { img: orderBanner3 }]
