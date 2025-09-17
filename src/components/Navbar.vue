@@ -47,6 +47,7 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
     :frosted="props.frosted"
     :opacity="props.opacity"
     :placeholder="props.placeholder"
+    height="88rpx"
   >
     <slot name="title" />
     {{ props.title }}

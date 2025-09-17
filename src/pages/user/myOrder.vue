@@ -52,8 +52,8 @@ function clickHomeIcon() {
     </template>
   </Navbar>
   <view
-    class="bg-#f6f6f6"
-    :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 44px)`, color: '#999' }"
+    class="bg-#f6f6f6 color-#999"
+    :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 88rpx)` }"
   >
     <TnTabs v-model="currentTabIndex" :scroll="false" active-color="#1A1A1A" color="#999999">
       <TnTabsItem v-for="(item, index) in tabsData" :key="index" :title="item.text" />

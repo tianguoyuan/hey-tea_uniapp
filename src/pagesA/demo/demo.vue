@@ -11,7 +11,7 @@ const list = [{ img: orderBanner1 }, { img: orderBanner2 }, { img: orderBanner3 
 </script>
 
 <template>
-  <view class="bg-#efefef" :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 44px)` }">
+  <view class="bg-#efefef" :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 88rpx)` }">
     <view>demo</view>
 
     <scroll-view

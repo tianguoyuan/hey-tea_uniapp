@@ -216,7 +216,7 @@ function productScroll(e) {
           id="productList"
           class="overflow-hidden flex pb-12"
           :style="{
-            height: `calc(${systemScreenInfo.height}px - ${navBarInfo.height}px - 50px - env(safe-area-inset-bottom))`,
+            height: `calc(${systemScreenInfo.height}px - ${navBarInfo.statusHeight}px - 88rpx - 100rpx - env(safe-area-inset-bottom))`,
           }"
         >
           <view class="w-19 flex-shrink-0">
@@ -290,14 +290,13 @@ function productScroll(e) {
           </view>
         </view>
         <!-- 占位tabbar -->
-        <view class="h-50px pb-safe"></view>
+        <view class="h-12.5 pb-safe"></view>
       </view>
     </view>
 
     <!-- 去支付控制栏 -->
     <view
-      class="fixed left-0 right-0 h-10.5 pb-safe items-center justify-between flex z-9 bg-#f2f2f2"
-      :style="{ bottom: 50 + 'px' }"
+      class="fixed left-0 right-0 h-10.5 pb-safe items-center justify-between flex z-9 bg-#f2f2f2 bottom-12.5"
     >
       <view class="pl-3 flex items-center">
         <view class="relative">
@@ -318,8 +317,7 @@ function productScroll(e) {
     <!-- 广告 -->
     <view
       v-if="apShow"
-      class="fixed left-0 right-0 h-12 bg-[linear-gradient(270deg,#FFF0DB_0%,#FCDDAE_100%)] pb-safe items-center justify-center flex z-10"
-      :style="{ bottom: 50 + 'px' }"
+      class="fixed left-0 right-0 h-12 bg-[linear-gradient(270deg,#FFF0DB_0%,#FCDDAE_100%)] pb-safe items-center justify-center flex z-10 bottom-12.5"
     >
       <view class="text-3.5">
         限时领

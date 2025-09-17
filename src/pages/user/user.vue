@@ -55,10 +55,10 @@ function pageTo(key: string) {
   <view
     class="bg-#F6F6F6"
     :style="{
-      'min-height': `calc(${systemScreenInfo.height}px - 50px)`,
+      'min-height': `calc(${systemScreenInfo.height}px - 100rpx)`,
     }"
   >
-    <view class="relative">
+    <view class="relative overflow-hidden">
       <image src="@/assets/icons/userTopCover.svg" class="h-66" mode="heightFix" />
       <view class="absolute left-5 top-27 right-5">
         <view class="text-5 color-#817287 font-600">茶茶</view>
