@@ -46,7 +46,6 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
     :frosted="props.frosted"
     :opacity="props.opacity"
     :placeholder="props.placeholder"
-    height="90rpx"
   >
     <!-- :status-height="navBarInfo.statusHeight"
     height="90rpx" -->
