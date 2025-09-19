@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+// #ifdef MP
+uni.showShareMenu()
+// #endif
+</script>
 
 <template>
   <slot />
