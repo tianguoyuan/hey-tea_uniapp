@@ -5,124 +5,6 @@
 
 // SVG 图标资源导入 - 从 static/icons 目录导入
 import PLATFORM from './platform'
-
-// #ifndef MP
-import addIcon from '@/static/icons/addIcon.svg'
-import address from '@/static/icons/address.svg'
-import arrowRight from '@/static/icons/arrowRight.svg'
-import arrowRightBrown from '@/static/icons/arrowRightBrown.svg'
-import arrowRightWhite from '@/static/icons/arrowRightWhite.svg'
-import camera from '@/static/icons/camera.svg'
-import close from '@/static/icons/close.svg'
-import closeBrown from '@/static/icons/closeBrown.svg'
-import goldCoupon from '@/static/icons/goldCoupon.svg'
-import goldCouponActive from '@/static/icons/goldCouponActive.svg'
-import goldCouponCardImg1 from '@/static/icons/goldCouponCardImg1.svg'
-import goldCouponCardImg2 from '@/static/icons/goldCouponCardImg2.svg'
-import goldCouponHB1 from '@/static/icons/goldCouponHB1.svg'
-import goldCouponHB2 from '@/static/icons/goldCouponHB2.svg'
-import goldCouponHB3 from '@/static/icons/goldCouponHB3.svg'
-import goldCouponProduct1 from '@/static/icons/goldCouponProduct1.svg'
-import goldCouponProduct2 from '@/static/icons/goldCouponProduct2.svg'
-import goldCouponProduct3 from '@/static/icons/goldCouponProduct3.svg'
-import goldCouponProduct4 from '@/static/icons/goldCouponProduct4.svg'
-import goldCouponProduct5 from '@/static/icons/goldCouponProduct5.svg'
-import goldCouponProduct6 from '@/static/icons/goldCouponProduct6.svg'
-import goldCouponProduct7 from '@/static/icons/goldCouponProduct7.svg'
-import goldCouponProduct8 from '@/static/icons/goldCouponProduct8.svg'
-import goldCouponProductNumBg from '@/static/icons/goldCouponProductNumBg.svg'
-import goldCouponTitleBg from '@/static/icons/goldCouponTitleBg.svg'
-import goldCouponTopBg1 from '@/static/icons/goldCouponTopBg1.svg'
-import goldCouponTopBg2 from '@/static/icons/goldCouponTopBg2.svg'
-import goldCouponTopBg3 from '@/static/icons/goldCouponTopBg3.svg'
-import happyMoneyBagXi from '@/static/icons/happyMoneyBagXi.svg'
-import home from '@/static/icons/home.svg'
-import homeActive from '@/static/icons/homeActive.svg'
-import hornBrown from '@/static/icons/hornBrown.svg'
-import indexCouponCityMore from '@/static/icons/indexCouponCityMore.svg'
-import indexCouponCSImage1 from '@/static/icons/indexCouponCSImage1.svg'
-import indexCouponCSImage2 from '@/static/icons/indexCouponCSImage2.svg'
-import indexCouponCSImage3 from '@/static/icons/indexCouponCSImage3.svg'
-import indexCouponCSImage4 from '@/static/icons/indexCouponCSImage4.svg'
-import indexCouponJXImage1 from '@/static/icons/indexCouponJXImage1.svg'
-import indexCouponJXImage2 from '@/static/icons/indexCouponJXImage2.svg'
-import indexCouponMyUnUsedCover from '@/static/icons/indexCouponMyUnUsedCover.svg'
-import indexCouponPayCover from '@/static/icons/indexCouponPayCover.svg'
-import indexCouponPJCover1 from '@/static/icons/indexCouponPJCover1.svg'
-import indexCouponXYFSImage1 from '@/static/icons/indexCouponXYFSImage1.svg'
-import indexCouponXYFSImage2 from '@/static/icons/indexCouponXYFSImage2.svg'
-import indexCouponXYFSImage3 from '@/static/icons/indexCouponXYFSImage3.svg'
-import indexCouponXYFSImage4 from '@/static/icons/indexCouponXYFSImage4.svg'
-import indexCouponXYYSImage1 from '@/static/icons/indexCouponXYYSImage1.svg'
-import indexCouponXYYSImage2 from '@/static/icons/indexCouponXYYSImage2.svg'
-import indexExchangeCouponCard from '@/static/icons/indexExchangeCouponCard.svg'
-import indexJSRightArrow from '@/static/icons/indexJSRightArrow.svg'
-import indexQHCover1 from '@/static/icons/indexQHCover1.svg'
-import indexSplashScreen from '@/static/icons/indexSplashScreen.svg'
-import indexTopCover from '@/static/icons/indexTopCover.svg'
-import indexWS1 from '@/static/icons/indexWS1.svg'
-import indexWS2 from '@/static/icons/indexWS2.svg'
-import indexWS3 from '@/static/icons/indexWS3.svg'
-import indexWS4 from '@/static/icons/indexWS4.svg'
-import indexXiWaiSong from '@/static/icons/indexXiWaiSong.svg'
-import indexYQCover1 from '@/static/icons/indexYQCover1.svg'
-import indexYQCover2 from '@/static/icons/indexYQCover2.svg'
-import indexYQCover3 from '@/static/icons/indexYQCover3.svg'
-import indexYQRightArrow from '@/static/icons/indexYQRightArrow.svg'
-import market from '@/static/icons/market.svg'
-import marketActive from '@/static/icons/marketActive.svg'
-import marketRX1 from '@/static/icons/marketRX1.svg'
-import marketSX1 from '@/static/icons/marketSX1.svg'
-import marketSX2 from '@/static/icons/marketSX2.svg'
-import marketTopCover from '@/static/icons/marketTopCover.svg'
-import marketZB1 from '@/static/icons/marketZB1.svg'
-import marketZB2 from '@/static/icons/marketZB2.svg'
-import marketZB3 from '@/static/icons/marketZB3.svg'
-import myOrderUserCover from '@/static/icons/myOrderUserCover.svg'
-import order from '@/static/icons/order.svg'
-import orderActive from '@/static/icons/orderActive.svg'
-import orderBanner1 from '@/static/icons/orderBanner1.svg'
-import orderBanner2 from '@/static/icons/orderBanner2.svg'
-import orderBanner3 from '@/static/icons/orderBanner3.svg'
-import orderClose from '@/static/icons/orderClose.svg'
-import orderProduct1 from '@/static/icons/orderProduct1.svg'
-import orderProduct2 from '@/static/icons/orderProduct2.svg'
-import orderProduct3 from '@/static/icons/orderProduct3.svg'
-import orderShopping from '@/static/icons/orderShopping.svg'
-import orderTopCover from '@/static/icons/orderTopCover.svg'
-import orderYiqihe from '@/static/icons/orderYiqihe.svg'
-import payCouponCityMoreBanner1 from '@/static/icons/payCouponCityMoreBanner1.svg'
-import payCouponCityMoreBanner2 from '@/static/icons/payCouponCityMoreBanner2.svg'
-import payCouponCityMoreBanner3 from '@/static/icons/payCouponCityMoreBanner3.svg'
-import payCouponCityMoreBanner4 from '@/static/icons/payCouponCityMoreBanner4.svg'
-import pointsMallList1 from '@/static/icons/pointsMallList1.svg'
-import pointsMallList2 from '@/static/icons/pointsMallList2.svg'
-import pointsMallList3 from '@/static/icons/pointsMallList3.svg'
-import pointsMallList4 from '@/static/icons/pointsMallList4.svg'
-import pointsMallList5 from '@/static/icons/pointsMallList5.svg'
-import pointsMallList6 from '@/static/icons/pointsMallList6.svg'
-import pointsMallTopList1 from '@/static/icons/pointsMallTopList1.svg'
-import pointsMallTopList2 from '@/static/icons/pointsMallTopList2.svg'
-import pointsMallTopList3 from '@/static/icons/pointsMallTopList3.svg'
-import print from '@/static/icons/print.svg'
-import qrcode from '@/static/icons/qrcode.svg'
-import search from '@/static/icons/search.svg'
-import searchCircle from '@/static/icons/searchCircle.svg'
-import setting from '@/static/icons/setting.svg'
-import star from '@/static/icons/star.svg'
-import user from '@/static/icons/user.svg'
-import userActive from '@/static/icons/userActive.svg'
-import userTopCover from '@/static/icons/userTopCover.svg'
-import userVipService1 from '@/static/icons/userVipService1.svg'
-import userVipService2 from '@/static/icons/userVipService2.svg'
-import userVipService3 from '@/static/icons/userVipService3.svg'
-import userVipService4 from '@/static/icons/userVipService4.svg'
-import userVipService5 from '@/static/icons/userVipService5.svg'
-import userVipService6 from '@/static/icons/userVipService6.svg'
-import userVipService7 from '@/static/icons/userVipService7.svg'
-import userVipService8 from '@/static/icons/userVipService8.svg'
-import userYQ1 from '@/static/icons/userYQ1.svg'
-
 const imageNames = [
   // 通用图标
   'addIcon',
@@ -259,7 +141,7 @@ const imageNames = [
 ] as const
 
 const isHttpImage = PLATFORM.isMp
-const imageBaseUrl = 'https://het-tea-uniapp.netlify.app/static/icon/'
+const imageBaseUrl = 'https://het-tea-uniapp.netlify.app'
 /**
  * 图片名称类型
  */
@@ -271,11 +153,5 @@ type ImageName = (typeof imageNames)[number]
  * @returns 图片URL或导入的资源
  */
 export const getImage = (imageName: ImageName): string => {
-  if (isHttpImage) {
-    // 使用变量拼接模式
-    return `${imageBaseUrl}/${imageName}.svg`
-  } else {
-    // 使用直接引入模式
-    return `/static/icons/${imageName}.svg`
-  }
+  return (isHttpImage ? imageBaseUrl : '') + `/static/icons/${imageName}.svg`
 }

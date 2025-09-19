@@ -6,7 +6,7 @@ import { getImage } from '@/utils/imageManager'
 //
 onLoad(() => PLATFORM.isApp && uni.hideTabBar())
 
-const isShowSplashScreen = ref(false)
+const isShowSplashScreen = ref(true)
 
 // 打开喜卡页面
 function pageToIndexCoupon() {

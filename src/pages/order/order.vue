@@ -215,7 +215,7 @@ function productScroll(e) {
           id="productList"
           class="overflow-hidden flex pb-12"
           :style="{
-            height: `calc(${appStore.systemScreenHeight}px - ${navBarInfo.statusHeight * 2}rpx - 88rpx - 100rpx - env(safe-area-inset-bottom))`,
+            height: `calc(${appStore.systemScreenHeight}px - ${navBarInfo.statusHeight}px - 88rpx - 100rpx - env(safe-area-inset-bottom))`,
           }"
         >
           <view class="w-19 flex-shrink-0">

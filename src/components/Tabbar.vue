@@ -80,7 +80,7 @@ function pageTo(index: number) {
   >
     <TnTabbarItem v-for="(item, index) in tabbarList" :key="index" @click="pageTo(index)">
       <template #default>
-        <view v-if="item.title" class="flex-1 flex items-center">
+        <view v-if="item.title" class="h-100rpx flex-1 flex items-center justify-center">
           <view class="flex flex-col items-center justify-center text-3">
             <view>
               <image

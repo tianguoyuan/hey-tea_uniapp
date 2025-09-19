@@ -29,17 +29,12 @@ const emit = defineEmits<{
 <template>
   <view
     v-if="props.visible"
-    class="h-screen bg-black/48 absolute top-0 left-0 right-0 bottom-0 z-20091"
+    class="h-screen bg-black/48 fixed top-0 left-0 right-0 bottom-0 z-20091"
   >
     <view class="flex flex-col h-full justify-center items-center">
-      <image class="w-73" :src="getImage('indexSplashScreen')" mode="widthFix" />
+      <image class="w-73 h-97" :src="getImage('indexSplashScreen')" />
 
-      <image
-        class="w-8 mt-3"
-        mode="widthFix"
-        :src="getImage('close')"
-        @click="emit('update:visible', false)"
-      />
+      <image class="w-8 h-8 mt-3" :src="getImage('close')" @click="emit('update:visible', false)" />
     </view>
   </view>
 </template>
