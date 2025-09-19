@@ -1,6 +1,6 @@
 ## 预览
 
-[h5](https://het-tea-uniapp.netlify.app/)
+[h5](https://fresh-supermarket-uniapp.netlify.app/)
 
 <table align="center">
 <tr>
