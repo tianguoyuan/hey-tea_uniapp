@@ -2,31 +2,30 @@
 import Tabbar from '@/components/Tabbar.vue'
 import PLATFORM from '@/utils/platform'
 import { TnSticky, useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
-import orderBanner1 from '@/assets/icons/orderBanner1.svg'
-import orderBanner2 from '@/assets/icons/orderBanner2.svg'
-import orderBanner3 from '@/assets/icons/orderBanner3.svg'
 import Navbar from '@/components/Navbar.vue'
-import orderProduct1 from '@/assets/icons/orderProduct1.svg'
-import orderProduct2 from '@/assets/icons/orderProduct2.svg'
-import orderProduct3 from '@/assets/icons/orderProduct3.svg'
+import { getImage } from '@/utils/imageManager'
 import { debounce, throttle } from 'throttle-debounce'
+import { useAppStore } from '@/store/app'
 
-const { navBarInfo, navBarBoundingInfo, systemScreenInfo, getSystemRectInfo } =
-  useUniAppSystemRectInfo()
-getSystemRectInfo()
+const { navBarInfo, navBarBoundingInfo } = useUniAppSystemRectInfo()
 
 console.log('navBarInfo', navBarInfo)
 console.log('navBarBoundingInfo', navBarBoundingInfo)
-console.log('systemScreenInfo', systemScreenInfo)
 
-const list = [{ imagePath: orderBanner1 }, { imagePath: orderBanner2 }, { imagePath: orderBanner3 }]
+const appStore = useAppStore()
+
+const list = [
+  { imagePath: getImage('orderBanner1') },
+  { imagePath: getImage('orderBanner2') },
+  { imagePath: getImage('orderBanner3') },
+]
 const tabIndex = ref(0)
 
 const apShow = ref(true)
 
 const navbarOpacity = ref('rgba(255,255,255,0)')
 const throttleChangeColor = throttle(50, (scrollTop) => {
-  navbarOpacity.value = `rgba(255,255,255,${scrollTop / 370})`
+  navbarOpacity.value = `rgba(255,255,255,${scrollTop / 300})`
 })
 
 onPageScroll(({ scrollTop }) => {
@@ -53,7 +52,7 @@ const productList = [
     title: '多肉杨梅',
     desc: '优选时令杨梅鲜果+经典无香精绿妍茶底， 真果肉，无小料。轻负担',
     num: '19',
-    imagePath: orderProduct1,
+    imagePath: getImage('orderProduct1'),
     tags: [
       {
         name: '回归',
@@ -71,7 +70,7 @@ const productList = [
     title: '多肉桃李(首创)',
     desc: '优选时令杨梅鲜果+经典无香精绿妍茶底， 真果肉，无小料。轻负担',
     num: '15',
-    imagePath: orderProduct2,
+    imagePath: getImage('orderProduct2'),
     tags: [
       {
         name: '含茶',
@@ -84,7 +83,7 @@ const productList = [
     title: '小奶茉(超大杯)',
     desc: '优选时令杨梅鲜果+经典无香精绿妍茶底， 真果肉，无小料。轻负担',
     num: '15',
-    imagePath: orderProduct3,
+    imagePath: getImage('orderProduct3'),
     tags: [
       {
         name: '含茶',
@@ -139,9 +138,9 @@ function productScroll(e) {
 
 <template>
   <view class="">
-    <Navbar title="点单" :bg-color="navbarOpacity" :placeholder="false" />
+    <Navbar :title="'点单'" :bg-color="navbarOpacity" :placeholder="false" />
     <view class="relative">
-      <image src="@/assets/icons/orderTopCover.svg" class="w-full" mode="widthFix" />
+      <image :src="getImage('orderTopCover')" class="w-full" mode="widthFix" />
 
       <view
         class="absolute left-0 right-0"
@@ -172,17 +171,17 @@ function productScroll(e) {
               喜外送
             </view>
           </view>
-          <image src="@/assets/icons/searchCircle.svg" class="h-8 w-8" />
+          <image :src="getImage('searchCircle')" class="h-8 w-8" />
         </view>
 
         <view class="flex items-center mt-2.5 ml-3.5">
-          <image src="@/assets/icons/star.svg" class="w-3.5 h-3.5" />
+          <image :src="getImage('star')" class="w-3.5 h-3.5" />
           <view class="ml-1.5 text-4 color-#fff">深圳讯美科技店</view>
-          <image src="@/assets/icons/arrowRightWhite.svg" class="w-4 h-4" />
+          <image :src="getImage('arrowRightWhite')" class="w-4 h-4" />
         </view>
 
         <view class="mt-0.5 flex items-center ml-3.5">
-          <image src="@/assets/icons/address.svg" class="h-3.5" mode="heightFix" />
+          <image :src="getImage('address')" class="h-3.5" mode="heightFix" />
           <view class="color-white ml-1">距离您959m</view>
         </view>
 
@@ -194,10 +193,10 @@ function productScroll(e) {
               贵宾活动
             </view>
             <view class="ml-2 color-white">加入「阿喜熟客群」，领18元新人礼！</view>
-            <image src="@/assets/icons/arrowRightWhite.svg" class="w-4 h-4" />
+            <image :src="getImage('arrowRightWhite')" class="w-4 h-4" />
           </view>
           <image
-            src="@/assets/icons/orderYiqihe.svg"
+            :src="getImage('orderYiqihe')"
             class="w-12 absolute right-4.5 bottom-0"
             mode="widthFix"
           />
@@ -216,7 +215,7 @@ function productScroll(e) {
           id="productList"
           class="overflow-hidden flex pb-12"
           :style="{
-            height: `calc(${systemScreenInfo.height}px - ${navBarInfo.statusHeight}px - 88rpx - 100rpx - env(safe-area-inset-bottom))`,
+            height: `calc(${appStore.systemScreenHeight}px - ${navBarInfo.statusHeight * 2}rpx - 88rpx - 100rpx - env(safe-area-inset-bottom))`,
           }"
         >
           <view class="w-19 flex-shrink-0">
@@ -224,8 +223,8 @@ function productScroll(e) {
               <view
                 v-for="(item, index) in orderTagList"
                 :key="index"
-                class="h-18 px-2 flex justify-center items-center"
-                :class="orderTagIndex === index ? 'color-#000' : 'color-#000/40'"
+                class="h-18 px-2 flex justify-center items-center color-#000"
+                :class="orderTagIndex === index ? 'opacity-100' : 'opacity-40'"
                 @click="handleTagList(item, index)"
               >
                 {{ item.title }}
@@ -290,17 +289,17 @@ function productScroll(e) {
           </view>
         </view>
         <!-- 占位tabbar -->
-        <view class="h-12.5 pb-safe"></view>
+        <view class="h-12.5 pb-safe box-content"></view>
       </view>
     </view>
 
     <!-- 去支付控制栏 -->
     <view
-      class="fixed left-0 right-0 h-10.5 pb-safe items-center justify-between flex z-9 bg-#f2f2f2 bottom-12.5"
+      class="fixed left-0 right-0 h-10.5 pb-safe items-center justify-between flex z-9 bg-#f2f2f2 bottom-12.5 box-content"
     >
       <view class="pl-3 flex items-center">
         <view class="relative">
-          <image src="@/assets/icons/orderShopping.svg" class="w-8" mode="widthFix" />
+          <image :src="getImage('orderShopping')" class="w-8" mode="widthFix" />
           <view
             class="absolute right--1 top-0 w-4 h-4 bg-#CB9964 color-#fff rounded-full text-2.5 flex justify-center items-center"
           >
@@ -317,7 +316,7 @@ function productScroll(e) {
     <!-- 广告 -->
     <view
       v-if="apShow"
-      class="fixed left-0 right-0 h-12 bg-[linear-gradient(270deg,#FFF0DB_0%,#FCDDAE_100%)] pb-safe items-center justify-center flex z-10 bottom-12.5"
+      class="fixed left-0 right-0 h-12 bg-[linear-gradient(270deg,#FFF0DB_0%,#FCDDAE_100%)] pb-safe items-center justify-center flex z-10 bottom-12.5 box-content"
     >
       <view class="text-3.5">
         限时领
@@ -327,7 +326,7 @@ function productScroll(e) {
       <view class="ml-12 color-#fff bg-#EA603B rounded-full line-height-6 px-2.5">去领取</view>
 
       <image
-        src="@/assets/icons/orderClose.svg"
+        :src="getImage('orderClose')"
         class="absolute right-0 top-0 w-5"
         mode="widthFix"
         @click="apShow = false"

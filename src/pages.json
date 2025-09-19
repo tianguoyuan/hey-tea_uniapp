@@ -65,7 +65,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationStyle": "white",
+        "navigationStyle": "default",
         "navigationBarTitleText": "喜卡"
       }
     },

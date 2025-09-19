@@ -2,24 +2,17 @@
 import Tabbar from '@/components/Tabbar.vue'
 import CardTitle from './components/CardTitle.vue'
 
-import goldCouponProduct1 from '@/assets/icons/goldCouponProduct1.svg'
-import goldCouponProduct2 from '@/assets/icons/goldCouponProduct2.svg'
-import goldCouponProduct3 from '@/assets/icons/goldCouponProduct3.svg'
-import goldCouponProduct4 from '@/assets/icons/goldCouponProduct4.svg'
-import goldCouponProduct5 from '@/assets/icons/goldCouponProduct5.svg'
-import goldCouponProduct6 from '@/assets/icons/goldCouponProduct6.svg'
-import goldCouponProduct7 from '@/assets/icons/goldCouponProduct7.svg'
-import goldCouponProduct8 from '@/assets/icons/goldCouponProduct8.svg'
+import { getImage } from '@/utils/imageManager'
 
 const productList = ref([
-  { imagePath: goldCouponProduct1, title: '多肉葡萄(首创)', num: '15.5' },
-  { imagePath: goldCouponProduct2, title: '椰椰芒芒', num: '15' },
-  { imagePath: goldCouponProduct3, title: '热多肉红柚', num: '15.5' },
-  { imagePath: goldCouponProduct4, title: '黑糖波波真牛乳', num: '12' },
-  { imagePath: goldCouponProduct5, title: '多肉杨梅', num: '16.5' },
-  { imagePath: goldCouponProduct6, title: '多肉葡萄', num: '13' },
-  { imagePath: goldCouponProduct7, title: '多肉青提', num: '13.5' },
-  { imagePath: goldCouponProduct8, title: '小奶茉', num: '12.5' },
+  { imagePath: getImage('goldCouponProduct1'), title: '多肉葡萄(首创)', num: '15.5' },
+  { imagePath: getImage('goldCouponProduct2'), title: '椰椰芒芒', num: '15' },
+  { imagePath: getImage('goldCouponProduct3'), title: '热多肉红柚', num: '15.5' },
+  { imagePath: getImage('goldCouponProduct4'), title: '黑糖波波真牛乳', num: '12' },
+  { imagePath: getImage('goldCouponProduct5'), title: '多肉杨梅', num: '16.5' },
+  { imagePath: getImage('goldCouponProduct6'), title: '多肉葡萄', num: '13' },
+  { imagePath: getImage('goldCouponProduct7'), title: '多肉青提', num: '13.5' },
+  { imagePath: getImage('goldCouponProduct8'), title: '小奶茉', num: '12.5' },
 ])
 </script>
 
@@ -27,7 +20,7 @@ const productList = ref([
   <view class="">
     <view class="bg-#FFD495 relative pb-11 h-77 overflow-hidden">
       <image
-        src="@/assets/icons/goldCouponTopBg1.svg"
+        :src="getImage('goldCouponTopBg1')"
         class="h-77 left--48 top--4.5 absolute"
         mode="heightFix"
       />
@@ -35,15 +28,12 @@ const productList = ref([
       <view
         class="top-25 left-5 right-5 absolute z-1 bg-#fff/60 h-37 rounded-4 p-3 flex flex-col justify-between"
       >
-        <image
-          src="@/assets/icons/goldCouponTopBg2.svg"
-          class="w-30 h-30 right-9 top--12 absolute"
-        />
-        <image src="@/assets/icons/goldCouponTopBg3.svg" class="w-50 h-50 right-0 top-0 absolute" />
+        <image :src="getImage('goldCouponTopBg2')" class="w-30 h-30 right-9 top--12 absolute" />
+        <image :src="getImage('goldCouponTopBg3')" class="w-50 h-50 right-0 top-0 absolute" />
 
         <view>
           <view class="flex items-center">
-            <image src="@/assets/icons/goldCouponCardImg1.svg" class="w-7.5" mode="widthFix" />
+            <image :src="getImage('goldCouponCardImg1')" class="w-7.5" mode="widthFix" />
             <text class="text-5 color-#843816 ml-2 font-600">金喜卡</text>
           </view>
           <view class="mt-1 text-3.5 color-#863B14">
@@ -53,7 +43,7 @@ const productList = ref([
           </view>
         </view>
         <view class="">
-          <image src="@/assets/icons/goldCouponCardImg2.svg" class="h-6" mode="heightFix" />
+          <image :src="getImage('goldCouponCardImg2')" class="h-6" mode="heightFix" />
         </view>
       </view>
     </view>
@@ -62,9 +52,9 @@ const productList = ref([
       <view>
         <CardTitle tip="权益1" title="金喜红包" prev-desc="最高可省" next-desc="元" num="98" />
         <view class="mt-3 flex justify-between">
-          <image src="@/assets/icons/goldCouponHB1.svg" class="h-22" mode="heightFix" />
-          <image src="@/assets/icons/goldCouponHB2.svg" class="h-22" mode="heightFix" />
-          <image src="@/assets/icons/goldCouponHB3.svg" class="h-22" mode="heightFix" />
+          <image :src="getImage('goldCouponHB1')" class="h-22" mode="heightFix" />
+          <image :src="getImage('goldCouponHB2')" class="h-22" mode="heightFix" />
+          <image :src="getImage('goldCouponHB3')" class="h-22" mode="heightFix" />
         </view>
       </view>
 
@@ -89,7 +79,7 @@ const productList = ref([
                     </text>
                   </view>
                   <image
-                    src="@/assets/icons/goldCouponProductNumBg.svg"
+                    :src="getImage('goldCouponProductNumBg')"
                     class="h-4 ml-0.5"
                     mode="heightFix"
                   />
@@ -107,12 +97,12 @@ const productList = ref([
       <view class="mt-3">
         <view class="flex justify-between text-3.5 py-3">
           <view>开通规则</view>
-          <image src="@/assets/icons/arrowRight.svg" class="w-4 h-4" />
+          <image :src="getImage('arrowRight')" class="w-4 h-4" />
         </view>
         <view class="h-1px bg-#e7e7e7"></view>
         <view class="flex justify-between text-3.5 py-3">
           <view>常见问题</view>
-          <image src="@/assets/icons/arrowRight.svg" class="w-4 h-4" />
+          <image :src="getImage('arrowRight')" class="w-4 h-4" />
         </view>
       </view>
       <view class="text-2.5 color-#999999 text-center mt-7">

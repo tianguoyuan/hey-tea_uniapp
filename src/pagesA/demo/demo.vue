@@ -1,17 +1,20 @@
 <script lang="ts" setup>
-import orderBanner1 from '@/assets/icons/orderBanner1.svg'
-import orderBanner2 from '@/assets/icons/orderBanner2.svg'
-import orderBanner3 from '@/assets/icons/orderBanner3.svg'
-import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
-const { systemScreenInfo, getSystemRectInfo } = useUniAppSystemRectInfo()
-getSystemRectInfo()
-console.log('systemScreenInfo', systemScreenInfo)
+import { getImage } from '@/utils/imageManager'
+import { useAppStore } from '@/store/app'
 
-const list = [{ img: orderBanner1 }, { img: orderBanner2 }, { img: orderBanner3 }]
+const appStore = useAppStore()
+const list = [
+  { img: getImage('orderBanner1') },
+  { img: getImage('orderBanner2') },
+  { img: getImage('orderBanner3') },
+]
 </script>
 
 <template>
-  <view class="bg-#efefef" :style="{ 'min-height': `calc(${systemScreenInfo.height}px - 88rpx)` }">
+  <view
+    class="bg-#efefef"
+    :style="{ 'min-height': `calc(${appStore.systemScreenHeight}px - 88rpx)` }"
+  >
     <view>demo</view>
 
     <scroll-view

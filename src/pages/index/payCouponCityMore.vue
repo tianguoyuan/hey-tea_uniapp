@@ -1,13 +1,10 @@
 <script lang="ts" setup>
-import payCouponCityMoreBanner1 from '@/assets/icons/payCouponCityMoreBanner1.svg'
-import payCouponCityMoreBanner2 from '@/assets/icons/payCouponCityMoreBanner2.svg'
-import payCouponCityMoreBanner3 from '@/assets/icons/payCouponCityMoreBanner3.svg'
-import payCouponCityMoreBanner4 from '@/assets/icons/payCouponCityMoreBanner4.svg'
+import { getImage } from '@/utils/imageManager'
 const bannerList = ref([
-  { imagePath: payCouponCityMoreBanner1 },
-  { imagePath: payCouponCityMoreBanner2 },
-  { imagePath: payCouponCityMoreBanner3 },
-  { imagePath: payCouponCityMoreBanner4 },
+  { imagePath: getImage('payCouponCityMoreBanner1') },
+  { imagePath: getImage('payCouponCityMoreBanner2') },
+  { imagePath: getImage('payCouponCityMoreBanner3') },
+  { imagePath: getImage('payCouponCityMoreBanner4') },
 ])
 const bannerIndex = ref(1)
 const currentImg = computed(() => bannerList.value[bannerIndex.value]?.imagePath)

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Navbar from '@/components/Navbar.vue'
 import { useTabbarStore } from '@/store/tabbar'
+import { getImage } from '@/utils/imageManager'
 
 const priceList = ref([
   { num: '¥100', desc: '' },
@@ -40,12 +41,12 @@ function homeIcon() {
     <view class="bg-#CFA76A p-5 pt-2 pb-7">
       <view class="h-9 bg-#F1E4D1 flex justify-between items-center px-3">
         <view class="flex items-center">
-          <image src="@/assets/icons/hornBrown.svg" class="w-4 h-4" />
+          <image :src="getImage('hornBrown')" class="w-4 h-4" />
           <text class="ml-1 color-#8C6941 text-2.5">
             「喜茶钱包」全新升级为「喜钱袋」，充值享赠礼
           </text>
         </view>
-        <image src="@/assets/icons/closeBrown.svg" class="h-5 w-5" />
+        <image :src="getImage('closeBrown')" class="h-5 w-5" />
       </view>
 
       <view class="flex justify-between items-center mt-5 color-white">
@@ -53,16 +54,16 @@ function homeIcon() {
           <view>喜钱袋余额（元）</view>
           <view class="flex items-baseline">
             <view class="text-6 font-600">0.00</view>
-            <image src="@/assets/icons/arrowRightWhite.svg" class="w-4 h-4 translate-y-0.5 ml-1" />
+            <image :src="getImage('arrowRightWhite')" class="w-4 h-4 translate-y-0.5 ml-1" />
           </view>
         </view>
         <view class="ml-6.5 flex">
           <view class="text-center">
-            <image src="@/assets/icons/qrcode.svg" class="h-6" mode="heightFix" />
+            <image :src="getImage('qrcode')" class="h-6" mode="heightFix" />
             <view>付款码</view>
           </view>
           <view class="ml-6.5 text-center">
-            <image src="@/assets/icons/setting.svg" class="h-6" mode="heightFix" />
+            <image :src="getImage('setting')" class="h-6" mode="heightFix" />
             <view>设置</view>
           </view>
         </view>
@@ -82,7 +83,7 @@ function homeIcon() {
           <view class="text-1.5 mt-1px line-height-3">*领取后30天有效</view>
         </view>
         <view class="flex">
-          <image src="@/assets/icons/happyMoneyBagXi.svg" class="h-21" mode="heightFix" />
+          <image :src="getImage('happyMoneyBagXi')" class="h-21" mode="heightFix" />
           <view class="color-#F9AB1A text-2.5 mt-12 ml-2">LIVE JOY</view>
         </view>
       </view>

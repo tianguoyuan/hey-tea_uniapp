@@ -2,6 +2,7 @@
 import PLATFORM from '@/utils/platform'
 import Tabbar from '@/components/Tabbar.vue'
 import SplashScreen from './components/SplashScreen.vue'
+import { getImage } from '@/utils/imageManager'
 //
 onLoad(() => PLATFORM.isApp && uni.hideTabBar())
 
@@ -17,7 +18,7 @@ function pageToIndexCoupon() {
 
 <template>
   <view class="bg-#F7F4EF">
-    <image src="@/assets/icons/indexTopCover.svg" class="w-full" mode="widthFix" />
+    <image :src="getImage('indexTopCover')" class="w-full" mode="widthFix" />
 
     <!-- 个人信息, 我的权益 -->
     <view class="mx-3 bg-white mt--5 p-4 z-1 relative rounded-1">
@@ -41,7 +42,7 @@ function pageToIndexCoupon() {
           <text class="ml-1 color-#999999">您有0项待使用权，开启提醒不错过</text>
         </view>
         <view>
-          <image src="@/assets/icons/arrowRight.svg" class="w-5" mode="widthFix" />
+          <image :src="getImage('arrowRight')" class="w-5" mode="widthFix" />
         </view>
       </view>
     </view>
@@ -56,7 +57,7 @@ function pageToIndexCoupon() {
         <view class="h-8.5 w-1px bg-#C9C9C9 mx-10"></view>
         <view class="relative">
           <image
-            src="@/assets/icons/indexXiWaiSong.svg"
+            :src="getImage('indexXiWaiSong')"
             class="h-17 absolute left--13 bottom--3"
             mode="heightFix"
           />
@@ -66,22 +67,22 @@ function pageToIndexCoupon() {
       </view>
       <view class="mt-4 flex">
         <view class="flex-1 flex justify-center items-center flex-col">
-          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS1.svg" />
+          <image class="h-8" mode="heightFix" :src="getImage('indexWS1')" />
           <view class="mt-1.5">配方原料揭秘</view>
         </view>
         <view
           class="hasClickBox flex-1 flex justify-center items-center flex-col"
           @click="pageToIndexCoupon"
         >
-          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS2.svg" />
+          <image class="h-8" mode="heightFix" :src="getImage('indexWS2')" />
           <view class="mt-1.5">喜卡</view>
         </view>
         <view class="flex-1 flex justify-center items-center flex-col">
-          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS3.svg" />
+          <image class="h-8" mode="heightFix" :src="getImage('indexWS3')" />
           <view class="mt-1.5">成为合伙人</view>
         </view>
         <view class="flex-1 flex justify-center items-center flex-col">
-          <image class="h-8" mode="heightFix" src="@/assets/icons/indexWS4.svg" />
+          <image class="h-8" mode="heightFix" :src="getImage('indexWS4')" />
           <view class="mt-1.5">阿喜团餐</view>
         </view>
       </view>
@@ -98,7 +99,7 @@ function pageToIndexCoupon() {
           </view>
           <view class="flex items-center">
             <text class="color-#CB9964 text-3">元红包</text>
-            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+            <image :src="getImage('indexYQRightArrow')" mode="widthFix" class="w-3" />
           </view>
         </view>
         <view
@@ -108,7 +109,7 @@ function pageToIndexCoupon() {
         </view>
         <image
           class="absolute right-0 bottom-0 h-28"
-          src="@/assets/icons/indexYQCover1.svg"
+          :src="getImage('indexYQCover1')"
           mode="heightFix"
         />
       </view>
@@ -118,26 +119,26 @@ function pageToIndexCoupon() {
           <view class="text-4 font-600">加熟客群</view>
           <view class="flex items-center pt-1">
             <view class="color-#CB9964 line-height-5">领18元入群礼</view>
-            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+            <image :src="getImage('indexYQRightArrow')" mode="widthFix" class="w-3" />
           </view>
 
           <image
             class="absolute right-0 bottom-0 h-full"
             mode="heightFix"
-            src="@/assets/icons/indexYQCover2.svg"
+            :src="getImage('indexYQCover2')"
           />
         </view>
         <view class="bg-#DDE7DC flex-1 mt-2 pl-3 pt-2 relative">
           <view class="text-4 font-600">喜钱袋</view>
           <view class="flex items-center pt-1">
             <view class="color-#CB9964 line-height-5">充值享赠饮券</view>
-            <image src="@/assets/icons/indexYQRightArrow.svg" mode="widthFix" class="w-3" />
+            <image :src="getImage('indexYQRightArrow')" mode="widthFix" class="w-3" />
           </view>
 
           <image
             class="absolute right-0 bottom-0 h-full"
             mode="heightFix"
-            src="@/assets/icons/indexYQCover3.svg"
+            :src="getImage('indexYQCover3')"
           />
         </view>
       </view>
@@ -145,7 +146,7 @@ function pageToIndexCoupon() {
 
     <!-- 请喝活动 -->
     <view class="bg-white mt-3 mx-3">
-      <image src="@/assets/icons/indexQHCover1.svg" mode="widthFix" class="w-full" />
+      <image :src="getImage('indexQHCover1')" mode="widthFix" class="w-full" />
       <view class="py-4 px-3">
         <view class="text-4 font-600">又一年杨梅「鲜」，请喝10万杯～</view>
         <view>第五年杨梅季，真果肉，无小料，轻负担</view>
@@ -167,7 +168,7 @@ function pageToIndexCoupon() {
           2012年，喜茶使用真原茶、真牛乳首创芝士茶 推动行业原料升级，成为新茶饮的开创者
         </view>
         <view class="ml-6">
-          <image class="w-5 h-5" src="@/assets/icons/indexJSRightArrow.svg" />
+          <image class="w-5 h-5" :src="getImage('indexJSRightArrow')" />
         </view>
 
         <view
@@ -183,7 +184,7 @@ function pageToIndexCoupon() {
           与我们携手，将真品质的茶饮和激发喜悦的品 牌，带给更多的用户
         </view>
         <view class="ml-6">
-          <image class="w-5 h-5" src="@/assets/icons/indexJSRightArrow.svg" />
+          <image class="w-5 h-5" :src="getImage('indexJSRightArrow')" />
         </view>
       </view>
     </view>

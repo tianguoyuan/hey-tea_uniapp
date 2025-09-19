@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { getImage } from '@/utils/imageManager'
 //
 const props = defineProps<{
   tip: string
@@ -12,7 +13,7 @@ const props = defineProps<{
 <template>
   <view class="flex items-center">
     <view class="relative">
-      <image src="@/assets/icons/goldCouponTitleBg.svg" class="h-4 w-5" mode="heightFix" />
+      <image :src="getImage('goldCouponTitleBg')" class="h-4 w-5" mode="heightFix" />
       <view
         class="absolute left-0 right-0 text-center top-3px color-#843816 text-2.5 line-height-4"
       >

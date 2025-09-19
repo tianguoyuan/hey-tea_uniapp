@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useTabbarStore } from '@/store/tabbar'
+import { getImage } from '@/utils/imageManager'
 
 const props = defineProps<{
   visible: boolean
@@ -31,12 +32,12 @@ const emit = defineEmits<{
     class="h-screen bg-black/48 absolute top-0 left-0 right-0 bottom-0 z-20091"
   >
     <view class="flex flex-col h-full justify-center items-center">
-      <image class="w-73" src="@/assets/icons/indexSplashScreen.svg" mode="widthFix" />
+      <image class="w-73" :src="getImage('indexSplashScreen')" mode="widthFix" />
 
       <image
         class="w-8 mt-3"
         mode="widthFix"
-        src="@/assets/icons/close.svg"
+        :src="getImage('close')"
         @click="emit('update:visible', false)"
       />
     </view>

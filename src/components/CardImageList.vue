@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { getImage } from '@/utils/imageManager'
+
 const props = defineProps<{
   title?: string
   list: {
@@ -39,7 +41,7 @@ const emits = defineEmits<{
             <text class="text-3.5">{{ item.price }}</text>
           </view>
 
-          <image src="@/assets/icons/addIcon.svg" class="w-3.5" mode="widthFix" />
+          <image :src="getImage('addIcon')" class="w-3.5" mode="widthFix" />
         </view>
 
         <slot name="footer" :item="item" />
@@ -52,7 +54,7 @@ const emits = defineEmits<{
       @click="emits('handleMoreClick')"
     >
       <view class="color-#999999">展开全部</view>
-      <image src="@/assets/icons/arrowRight.svg" class="rotate-90 w-4 h-4" />
+      <image :src="getImage('arrowRight')" class="rotate-90 w-4 h-4" />
     </view>
   </view>
 </template>

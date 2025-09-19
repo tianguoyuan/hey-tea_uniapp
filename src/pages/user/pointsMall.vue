@@ -1,29 +1,20 @@
 <script lang="ts" setup>
-import pointsMallTopList1 from '@/assets/icons/pointsMallTopList1.svg'
-import pointsMallTopList2 from '@/assets/icons/pointsMallTopList2.svg'
-import pointsMallTopList3 from '@/assets/icons/pointsMallTopList3.svg'
 import CardImageList from '@/components/CardImageList.vue'
-
-import pointsMallList1 from '@/assets/icons/pointsMallList1.svg'
-import pointsMallList2 from '@/assets/icons/pointsMallList2.svg'
-import pointsMallList3 from '@/assets/icons/pointsMallList3.svg'
-import pointsMallList4 from '@/assets/icons/pointsMallList4.svg'
-import pointsMallList5 from '@/assets/icons/pointsMallList5.svg'
-import pointsMallList6 from '@/assets/icons/pointsMallList6.svg'
+import { getImage } from '@/utils/imageManager'
 
 const infoList = ref([
-  { imagePath: pointsMallTopList1, title: '积分明细' },
-  { imagePath: pointsMallTopList2, title: '兑换记录' },
-  { imagePath: pointsMallTopList3, title: '积分规则' },
+  { imagePath: getImage('pointsMallTopList1'), title: '积分明细' },
+  { imagePath: getImage('pointsMallTopList2'), title: '兑换记录' },
+  { imagePath: getImage('pointsMallTopList3'), title: '积分规则' },
 ])
 
 const listData = ref([
-  { points: '200', imagePath: pointsMallList1, title: '外卖免配送费券' },
-  { points: '300', imagePath: pointsMallList2, title: '要吃点（1件）兑换券' },
-  { points: '200', imagePath: pointsMallList3, title: '外卖免配送费券' },
-  { points: '300', imagePath: pointsMallList4, title: '要吃点（1件）兑换券' },
-  { points: '200', imagePath: pointsMallList5, title: '外卖免配送费券' },
-  { points: '300', imagePath: pointsMallList6, title: '要吃点（1件）兑换券' },
+  { points: '200', imagePath: getImage('pointsMallList1'), title: '外卖免配送费券' },
+  { points: '300', imagePath: getImage('pointsMallList2'), title: '要吃点（1件）兑换券' },
+  { points: '200', imagePath: getImage('pointsMallList3'), title: '外卖免配送费券' },
+  { points: '300', imagePath: getImage('pointsMallList4'), title: '要吃点（1件）兑换券' },
+  { points: '200', imagePath: getImage('pointsMallList5'), title: '外卖免配送费券' },
+  { points: '300', imagePath: getImage('pointsMallList6'), title: '要吃点（1件）兑换券' },
 ])
 </script>
 

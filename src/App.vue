@@ -2,11 +2,22 @@
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
 import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'
 import { navigateToInterceptor } from './interceptors/route'
+import { useAppStore } from './store/app'
+
+const appStore = useAppStore()
 onLaunch((options) => {
   console.log('App Launch', options)
   // 首次进入判断页面是否需要登录
   navigateToInterceptor.invoke({ url: '/' + options.path })
+
+  uni.getSystemInfo({
+    success: function (res) {
+      console.log('屏幕高度：', res.screenHeight)
+      appStore.changeSystemScreenHeight(res.screenHeight)
+    },
+  })
 })
+onReady(() => {})
 onShow(() => {
   console.log('App Show')
 })

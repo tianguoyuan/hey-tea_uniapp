@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import { TnCheckbox, TnIcon, TnInput, TnRadio } from '@tuniao/tnui-vue3-uniapp'
+import TnCheckbox from '@tuniao/tnui-vue3-uniapp/components/checkbox/src/checkbox.vue'
+import TnInput from '@tuniao/tnui-vue3-uniapp/components/input/src/input.vue'
+import { getImage } from '@/utils/imageManager'
 
 const form = ref({
   username: '',
@@ -11,24 +13,24 @@ const form = ref({
 <template>
   <view class="">
     <view class="bg-#F5F6F8">
-      <image src="@/assets/icons/indexExchangeCouponCard.svg" class="w-full" mode="widthFix" />
+      <image :src="getImage('indexExchangeCouponCard')" class="w-full" mode="widthFix" />
     </view>
 
     <view class="p-5">
       <TnInput
         v-model="form.username"
         placeholder="请输入用户名"
-        class="bg-#F2F2F2 h-12 text-3.5 placeholder-text-3.5 pl-3"
+        custom-class="bg-#F2F2F2 h-12 text-3.5 placeholder-text-3.5 pl-3"
       >
         <template #suffix>
-          <image src="@/assets/icons/camera.svg" class="w-5" />
+          <image :src="getImage('camera')" class="w-5" />
         </template>
       </TnInput>
 
       <TnInput
         v-model="form.code"
         placeholder="请输入激活码"
-        class="bg-#F2F2F2 h-12 text-3.5 placeholder-text-3.5 mt-5 pl-3"
+        custom-class="bg-#F2F2F2 h-12 text-3.5 placeholder-text-3.5 mt-5 pl-3"
       ></TnInput>
 
       <view class="bg-#999999 color-white text-4 py-3 mt-5 text-center">兑换</view>

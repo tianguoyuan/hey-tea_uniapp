@@ -3,35 +3,42 @@ import { ColorEnum } from '@/enums/ColorEnum'
 import TnTabbar from '@tuniao/tnui-vue3-uniapp/components/tabbar/src/tabbar.vue'
 import TnTabbarItem from '@tuniao/tnui-vue3-uniapp/components/tabbar/src/tabbar-item.vue'
 import { useTabbarStore } from '@/store/tabbar'
-import IconHome from '@/assets/icons/home.svg'
-import IconHomeActive from '@/assets/icons/homeActive.svg'
-import IconMarket from '@/assets/icons/market.svg'
-import IconMarketActive from '@/assets/icons/marketActive.svg'
-import IconUser from '@/assets/icons/user.svg'
-import IconUserActive from '@/assets/icons/userActive.svg'
-import IconOrder from '@/assets/icons/order.svg'
-import IconOrderActive from '@/assets/icons/orderActive.svg'
-import IconGoldCoupon from '@/assets/icons/goldCoupon.svg'
-import IconGoldCouponActive from '@/assets/icons/goldCouponActive.svg'
+import { getImage } from '@/utils/imageManager'
 import PLATFORM from '@/utils/platform'
+
 const tabbarStore = useTabbarStore()
 
 const tabbarList = [
-  { title: '首页', icon: IconHome, activeIcon: IconHomeActive, path: '/pages/index/index' },
-  { title: '点单', icon: IconOrder, activeIcon: IconOrderActive, path: '/pages/order/order' },
+  {
+    title: '首页',
+    icon: getImage('home'),
+    activeIcon: getImage('homeActive'),
+    path: '/pages/index/index',
+  },
+  {
+    title: '点单',
+    icon: getImage('order'),
+    activeIcon: getImage('orderActive'),
+    path: '/pages/order/order',
+  },
   {
     title: '百货',
-    icon: IconMarket,
-    activeIcon: IconMarketActive,
+    icon: getImage('market'),
+    activeIcon: getImage('marketActive'),
     path: '/pages/market/market',
   },
   {
     title: '金喜卡',
-    icon: IconGoldCoupon,
-    activeIcon: IconGoldCouponActive,
+    icon: getImage('goldCoupon'),
+    activeIcon: getImage('goldCouponActive'),
     path: '/pages/goldCoupon/goldCoupon',
   },
-  { title: '我的', icon: IconUser, activeIcon: IconUserActive, path: '/pages/user/user' },
+  {
+    title: '我的',
+    icon: getImage('user'),
+    activeIcon: getImage('userActive'),
+    path: '/pages/user/user',
+  },
 ]
 type PathType = (typeof tabbarList)[number]['path']
 const props = withDefaults(

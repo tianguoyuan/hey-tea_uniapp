@@ -95,6 +95,10 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true
+    "watchSyncEffect": true,
+    "useImage": true,
+    "useImageManager": true,
+    "useImages": true,
+    "useImagesByCategory": true
   }
 }
