@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp/hooks/use-uniapp-system-rect-info'
 import TnIcon from '@tuniao/tnui-vue3-uniapp/components/icon/src/icon.vue'
 import TnNavbar from '@tuniao/tnui-vue3-uniapp/components/navbar/src/navbar.vue'
-const { navBarInfo } = useUniAppSystemRectInfo()
 
 const props = withDefaults(
   defineProps<{
@@ -48,9 +46,10 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
     :frosted="props.frosted"
     :opacity="props.opacity"
     :placeholder="props.placeholder"
+    height="90rpx"
   >
     <!-- :status-height="navBarInfo.statusHeight"
-    height="88rpx" -->
+    height="90rpx" -->
     <slot name="title" />
     {{ props.title }}
 

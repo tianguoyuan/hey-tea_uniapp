@@ -13,7 +13,7 @@ const list = [
 <template>
   <view
     class="bg-#efefef"
-    :style="{ 'min-height': `calc(${appStore.systemScreenHeight}px - 88rpx)` }"
+    :style="{ 'min-height': `calc(${appStore.systemScreenHeight}px - 90rpx)` }"
   >
     <view>demo</view>
 

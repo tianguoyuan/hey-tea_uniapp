@@ -6,7 +6,9 @@ import PLATFORM from '@/utils/platform'
 import TnTabsItem from '@tuniao/tnui-vue3-uniapp/components/tabs/src/tabs-item.vue'
 import TnTabs from '@tuniao/tnui-vue3-uniapp/components/tabs/src/tabs.vue'
 import { getImage } from '@/utils/imageManager'
+import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp'
 
+const { navBarInfo } = useUniAppSystemRectInfo()
 const appStore = useAppStore()
 
 const currentTabIndex = ref(0)
@@ -55,7 +57,9 @@ function clickHomeIcon() {
   </Navbar>
   <view
     class="bg-#f6f6f6 color-#999"
-    :style="{ 'min-height': `calc(${appStore.systemScreenHeight}px - 88rpx - 80rpx)` }"
+    :style="{
+      'min-height': `calc(${appStore.systemScreenHeight}px - ${navBarInfo.statusHeight}px - 90rpx)`,
+    }"
   >
     <TnTabs v-model="currentTabIndex" :scroll="false" active-color="#1A1A1A" color="#999999">
       <TnTabsItem v-for="(item, index) in tabsData" :key="index" :title="item.text" />
