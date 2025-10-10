@@ -6,6 +6,7 @@ import { getImage } from '@/utils/imageManager'
 import { debounce, throttle } from 'throttle-debounce'
 import { useAppStore } from '@/store/app'
 import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp/hooks/use-uniapp-system-rect-info'
+import { calcSize } from '@/utils'
 
 const { navBarInfo, navBarBoundingInfo } = useUniAppSystemRectInfo()
 
@@ -134,6 +135,12 @@ const throttleChangeTagIndex = throttle(300, (e) => {
 function productScroll(e) {
   throttleChangeTagIndex(e)
 }
+
+// banner居中
+const bannerScrollLeft = ref(calcSize(90))
+uni.onWindowResize(() => {
+  bannerScrollLeft.value = calcSize(90)
+})
 </script>
 
 <template>
@@ -202,7 +209,7 @@ function productScroll(e) {
           />
         </view>
 
-        <scroll-view scroll-x class="mt-3 mb-4" scroll-left="100">
+        <scroll-view scroll-x class="mt-3 mb-4" :scroll-left="bannerScrollLeft">
           <view class="flex flex-nowrap items-center pl-3">
             <view v-for="(item, i) in list" :key="i" class="w-[50%] shrink-0 snap-center pr-3">
               <image :src="item.imagePath" class="w-full" mode="widthFix" />

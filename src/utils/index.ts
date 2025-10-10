@@ -190,3 +190,13 @@ export const getNavbarTop = () => {
 
   return rect.top
 }
+
+// 计算px再不同尺寸
+export function calcSize(baseSize = 90, designWidth = 375) {
+  // 获取屏幕信息
+  const systemInfo = uni.getSystemInfoSync()
+  const screenWidth = systemInfo.screenWidth
+
+  // 计算在当前屏幕下的尺寸
+  return (baseSize * screenWidth) / designWidth
+}
