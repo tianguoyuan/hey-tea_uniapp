@@ -10,6 +10,7 @@ const imageNames = [
   'addIcon',
   'address',
   'arrowRight',
+  'arrowTopBlack',
   'arrowRightBrown',
   'arrowRightWhite',
   'camera',
@@ -22,6 +23,12 @@ const imageNames = [
   'searchCircle',
   'setting',
   'star',
+  'starBrown',
+  'goldBrow',
+  'rubbish',
+  'reduceRadio',
+  'addRadio',
+  'checkedRadio',
 
   // Tabbar 图标
   'home',

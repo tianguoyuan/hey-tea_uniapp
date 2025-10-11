@@ -138,6 +138,9 @@ importers:
       '@types/node':
         specifier: ^20.17.9
         version: 20.17.32
+      '@types/throttle-debounce':
+        specifier: ^5.0.2
+        version: 5.0.2
       '@types/wechat-miniprogram':
         specifier: ^3.4.8
         version: 3.4.8
@@ -2404,6 +2407,9 @@ packages:
 
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
+
+  '@types/throttle-debounce@5.0.2':
+    resolution: {integrity: sha512-pDzSNulqooSKvSNcksnV72nk8p7gRqN8As71Sp28nov1IgmPKWbOEIwAWvBME5pPTtaXJAvG3O4oc76HlQ4kqQ==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -11042,6 +11048,8 @@ snapshots:
   '@types/semver@7.7.0': {}
 
   '@types/stack-utils@2.0.3': {}
+
+  '@types/throttle-debounce@5.0.2': {}
 
   '@types/unist@3.0.3': {}
 

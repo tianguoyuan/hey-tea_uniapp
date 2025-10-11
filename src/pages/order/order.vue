@@ -23,6 +23,7 @@ const list = [
 const tabIndex = ref(0)
 
 const apShow = ref(true)
+const checkedListShow = ref(false)
 
 const navbarOpacity = ref('rgba(255,255,255,0)')
 const throttleChangeColor = throttle(50, (scrollTop) => {
@@ -301,24 +302,77 @@ uni.onWindowResize(() => {
     </view>
 
     <!-- 去支付控制栏 -->
-    <view
-      class="fixed left-0 right-0 h-10.5 pb-safe items-center justify-between flex z-9 bg-#f2f2f2 bottom-12.5 box-content"
-    >
-      <view class="pl-3 flex items-center">
-        <view class="relative">
-          <image :src="getImage('orderShopping')" class="w-8" mode="widthFix" />
-          <view
-            class="absolute right--1 top-0 w-4 h-4 bg-#CB9964 color-#fff rounded-full text-2.5 flex justify-center items-center"
-          >
-            1
+    <view class="fixed left-0 right-0 pb-safe z-9 bottom-12.5 box-content">
+      <!-- 产品 -->
+      <Transition name="fade">
+        <view
+          v-if="checkedListShow"
+          class="bg-#f8f8f8 pb-3 border-solid border-0 border-t border-t-0.5 rounded-t-2 border-#e8e8e8"
+        >
+          <view class="p-3 flex justify-between items-center">
+            <view class="flex items-center">
+              <view class="mr-1">预计可得积分</view>
+              <view class="mr-1 color-#C69B66">7</view>
+              <image :src="getImage('goldBrow')" class="w-3 h-3 mr-1" />
+              <view class="mr-1">成长值</view>
+              <view class="mr-1 color-#C69B66">15</view>
+              <image :src="getImage('starBrown')" class="w-3 h-3" />
+            </view>
+            <image :src="getImage('arrowTopBlack')" class="w-4 h-4" />
+          </view>
+          <view class="mx-3 mt-2 bg-#fff">
+            <view class="flex justify-between p-3">
+              <view>深圳讯美科技店</view>
+              <image :src="getImage('rubbish')" class="w-4 h-4" />
+            </view>
+            <view class="h-1px bg-#E7E7E7" />
+            <view class="p-3 flex">
+              <view class="flex items-center">
+                <image :src="getImage('checkedRadio')" class="w-5 h-5" />
+                <image :src="getImage('orderProduct1')" class="w-15 h-15 ml-3" />
+              </view>
+              <view class="ml-2.5">
+                <view class="text-3.5 line-height-5.5 font-600">小奶茉(超大杯)</view>
+                <view class="mt-1 flex justify-between items-center bg-#f9f9f9">
+                  <view class="color-#A0A0A0 text-2.5 line-height-5">
+                    推荐(少冰)，推荐甜度(少甜)，专用「品茗管」
+                  </view>
+                  <image :src="getImage('arrowRight')" class="rotate-z-90 w-4 h-4" />
+                </view>
+                <view class="mt-1 flex justify-between items-center">
+                  <view class="font-600">¥15</view>
+                  <view class="flex items-center">
+                    <image :src="getImage('reduceRadio')" class="w-5 h-5" />
+                    <view class="w-6.5 text-3.5 line-height-5.5 font-600 text-center">1</view>
+                    <image :src="getImage('addRadio')" class="w-5 h-5" />
+                  </view>
+                </view>
+              </view>
+            </view>
           </view>
         </view>
-        <view class="ml-4 font-600">
-          <text class="text-2.5">¥</text>
-          <text class="text-3.5">15</text>
+      </Transition>
+
+      <!-- 结算 -->
+      <view class="items-center justify-between flex bg-#f2f2f2">
+        <view class="pl-3 flex items-center">
+          <view class="relative hasClickBox" @click="checkedListShow = !checkedListShow">
+            <image :src="getImage('orderShopping')" class="w-8" mode="widthFix" />
+            <view
+              class="absolute right--1 top-0 w-4 h-4 bg-#CB9964 color-#fff rounded-full text-2.5 flex justify-center items-center"
+            >
+              1
+            </view>
+          </view>
+          <view class="ml-4 font-600">
+            <text class="text-2.5">¥</text>
+            <text class="text-3.5">15</text>
+          </view>
+        </view>
+        <view class="h-10.5 px-7 bg-#000 color-#fff flex items-center justify-center hasClickBox">
+          结算
         </view>
       </view>
-      <view class="h-full px-7 bg-#000 color-#fff flex items-center justify-center">结算</view>
     </view>
     <!-- 广告 -->
     <view

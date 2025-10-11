@@ -64,3 +64,15 @@ image {
   height: 100%;
   vertical-align: middle;
 }
+
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+.fade-leave-active {
+  transition: opacity 0;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
