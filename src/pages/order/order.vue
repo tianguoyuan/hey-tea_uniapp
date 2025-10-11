@@ -331,7 +331,7 @@ uni.onWindowResize(() => {
                 <image :src="getImage('checkedRadio')" class="w-5 h-5" />
                 <image :src="getImage('orderProduct1')" class="w-15 h-15 ml-3" />
               </view>
-              <view class="ml-2.5">
+              <view class="ml-2.5 flex-1">
                 <view class="text-3.5 line-height-5.5 font-600">小奶茉(超大杯)</view>
                 <view class="mt-1 flex justify-between items-center bg-#f9f9f9">
                   <view class="color-#A0A0A0 text-2.5 line-height-5">
