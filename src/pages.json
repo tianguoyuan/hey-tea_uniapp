@@ -97,6 +97,15 @@
       }
     },
     {
+      "path": "pages/order/detail",
+      "type": "page",
+      "layout": "default",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": ""
+      }
+    },
+    {
       "path": "pages/order/order",
       "type": "page",
       "layout": "default",

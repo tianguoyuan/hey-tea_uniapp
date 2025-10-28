@@ -25,9 +25,14 @@ const tabIndex = ref(0)
 const apShow = ref(true)
 const checkedListShow = ref(false)
 
+const titleOpacity = ref(0)
+const showBottomShadow = ref(false)
 const navbarOpacity = ref('rgba(255,255,255,0)')
 const throttleChangeColor = throttle(50, (scrollTop) => {
-  navbarOpacity.value = `rgba(255,255,255,${scrollTop / 300})`
+  const opacity = scrollTop / 300
+  showBottomShadow.value = opacity >= 0.5
+  titleOpacity.value = opacity
+  navbarOpacity.value = `rgba(255,255,255,${opacity})`
 })
 
 onPageScroll(({ scrollTop }) => {
@@ -142,11 +147,22 @@ const bannerScrollLeft = ref(calcSize(90))
 uni.onWindowResize(() => {
   bannerScrollLeft.value = calcSize(90)
 })
+
+// 产品详情页面
+function pageToDetail(id) {
+  uni.navigateTo({
+    url: '/pages/order/detail?id=' + id,
+  })
+}
 </script>
 
 <template>
   <view class="">
-    <Navbar :title="'点单'" :bg-color="navbarOpacity" :placeholder="false" />
+    <Navbar :bg-color="navbarOpacity" :placeholder="false" :bottom-shadow="showBottomShadow">
+      <template #title>
+        <view :style="{ opacity: titleOpacity }">点单</view>
+      </template>
+    </Navbar>
     <view class="relative">
       <image :src="getImage('orderTopCover')" class="w-full" mode="widthFix" />
 
@@ -259,6 +275,8 @@ uni.onWindowResize(() => {
                   v-for="(item, index) in product.list"
                   :key="index"
                   class="flex px-3 pt-3 items-center"
+                  :class="productIndex === 0 && index === 0 ? 'hasClickBox' : ''"
+                  @click="productIndex === 0 && index === 0 ? pageToDetail(item.title) : undefined"
                 >
                   <image :src="item.imagePath" class="w-20.5 h-20.5 flex-shrink-0" />
                   <view class="ml-2">

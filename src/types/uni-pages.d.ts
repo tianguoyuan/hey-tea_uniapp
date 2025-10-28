@@ -10,6 +10,7 @@ interface NavigateToOptions {
        "/pages/index/exchangeCoupon" |
        "/pages/index/payCouponCityMore" |
        "/pages/market/market" |
+       "/pages/order/detail" |
        "/pages/order/order" |
        "/pages/user/happyMoneyBag" |
        "/pages/user/myOrder" |
