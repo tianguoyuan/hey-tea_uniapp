@@ -19,6 +19,7 @@
 
 ## 📦 运行（支持热更新）
 
+- 图片添加在static/icons文件夹下, 并且在src/utils/imageManager.ts 文件中添加图片路径(小程序使用https://图片路径, 其余本地路径)
 - web平台： `pnpm dev:h5`, 然后打开 [http://localhost:9000/](http://localhost:9000/)。
 - weixin平台：`pnpm dev:mp-weixin` 然后打开微信开发者工具，导入本地文件夹，选择本项目的`dist/dev/mp-weixin` 文件。
 - APP平台：`pnpm dev:app`, 然后打开 `HBuilderX`，导入刚刚生成的`dist/dev/app` 文件夹，选择运行到模拟器(开发时优先使用)，或者运行的安卓/ios基座。

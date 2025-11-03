@@ -116,6 +116,12 @@ const imageNames = [
   'orderShopping',
   'orderTopCover',
   'orderYiqihe',
+  'orderDetailBanner1',
+  'orderDetailBanner2',
+  'orderDetailBanner3',
+  'orderDetailBanner4',
+  'orderDetailCover1',
+  'orderDetailDoc',
 
   // 支付优惠券城市更多
   'payCouponCityMoreBanner1',
@@ -159,6 +165,6 @@ type ImageName = (typeof imageNames)[number]
  * @param imageName 图片名称
  * @returns 图片URL或导入的资源
  */
-export const getImage = (imageName: ImageName): string => {
-  return (isHttpImage ? imageBaseUrl : '') + `/static/icons/${imageName}.svg`
+export const getImage = (imageName: ImageName, suffix = '.svg'): string => {
+  return (isHttpImage ? imageBaseUrl : '') + `/static/icons/${imageName}${suffix}`
 }
