@@ -29,6 +29,13 @@ const imageNames = [
   'reduceRadio',
   'addRadio',
   'checkedRadio',
+  'circleEdit',
+  'likeGray',
+  'shareGray',
+  'star',
+  'userAvatarDefault',
+  'starBrownFill',
+  'heart',
 
   // Tabbar 图标
   'home',

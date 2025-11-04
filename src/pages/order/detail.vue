@@ -74,6 +74,63 @@ function handleTabClick(index: number) {
     item.active = i === index
   })
 }
+
+const foodTypeList = ref([
+  {
+    title: '原创 0糖0卡糖',
+    content: [{ title: '真0卡糖¥1', active: false }],
+  },
+
+  {
+    title: '状态',
+    content: [
+      { title: '推荐(少冰)', active: true },
+      { title: '少少冰', active: false },
+      { title: '去冰(不推荐)', active: false },
+      { title: '多冰', active: false },
+      { title: '比较烫', active: false },
+      { title: '温', active: false },
+    ],
+  },
+  {
+    title: '甜度',
+    content: [
+      { title: '推荐甜度(少甜)', active: true },
+      { title: '少少甜', active: false },
+      { title: '少少少甜', active: false },
+      { title: '不另外加糖(不推荐)', active: false },
+      { title: '多甜', active: false },
+    ],
+  },
+  {
+    title: '♻️绿色喜茶',
+    content: [
+      { title: '专用「品茗管」', active: true },
+      { title: '不使用吸管', active: false },
+    ],
+  },
+])
+
+const userMessageList = ref([
+  {
+    avatar: getImage('userAvatarDefault'),
+    username: '小海鸥',
+    vip: '见习贵宾',
+    star: 5,
+    likeNum: 26,
+    content: [
+      '小奶茉可以升级超级大杯啦！',
+      ' 口感还是一如既往的赞，入口细腻清爽，回甘夹杂茉莉清香，非常棒，以后就点超大杯的了😋😋',
+    ],
+    imageList: [
+      getImage('orderDetailBanner2'),
+      getImage('orderDetailBanner3'),
+      getImage('orderDetailBanner4'),
+      getImage('orderDetailBanner2'),
+      getImage('orderDetailBanner3'),
+    ],
+  },
+])
 </script>
 
 <template>
@@ -88,7 +145,6 @@ function handleTabClick(index: number) {
         :bottom-shadow="false"
         show-back-icon
         show-home-icon
-        :fixed="false"
         @click-back-icon="clickBackIcon"
         @click-home-icon="clickHomeIcon"
       />
@@ -168,7 +224,127 @@ function handleTabClick(index: number) {
     <view class="mx-5 mt-2">
       <view class="text-3">喜茶为你推荐最适合此款饮品的口味</view>
     </view>
-    <view class="h-10"></view>
+    <!-- 食物规格类型 -->
+    <view class="mx-5">
+      <view
+        v-for="(item, index) in foodTypeList"
+        :key="index"
+        :class="[index === 0 ? 'mt-5' : 'mt-2']"
+      >
+        <view class="color-#999 text-3 line-height-5 mb-1">{{ item.title }}</view>
+        <view class="flex flex-wrap">
+          <view
+            v-for="(cItem, cIndex) in item.content"
+            :key="cIndex"
+            class="text-3 line-height-5 py-1.5 px-6 mr-3 flex-shrink-0 mb-3"
+            :class="[cItem.active ? 'bg-#1A1A1A color-#fff' : 'bg-#e7e7e7 color-#1A1A1A']"
+          >
+            {{ cItem.title }}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 精选评价 -->
+    <view class="mx-5 mt-5">
+      <view class="flex justify-between items-center">
+        <view class="text-4">精选评价</view>
+        <image :src="getImage('circleEdit')" class="w-7.5 h-7.5" />
+      </view>
+
+      <view v-for="(item, index) in userMessageList" :key="index">
+        <view class="flex justify-between items-center mt-3">
+          <view class="flex items-center">
+            <image :src="getImage('userAvatarDefault')" class="w-8 h-8" />
+            <view class="ml-2 text-3">
+              <view class="flex items-center">
+                <view>{{ item.username }}</view>
+                <view class="ml-3 bg-#E44E45 color-#fff px-1 rounded-1 text-2.5">
+                  {{ item.vip }}
+                </view>
+              </view>
+              <view>
+                <image
+                  v-for="star in item.star"
+                  :key="star"
+                  :src="getImage('starBrownFill')"
+                  class="w-2.5 h-2.5 mr-1"
+                />
+              </view>
+            </view>
+          </view>
+          <view class="flex items-center">
+            <view class="flex items-center">
+              <image :src="getImage('shareGray')" class="h-3" mode="heightFix" />
+              <view class="color-#999 ml-1">分享</view>
+            </view>
+            <view class="ml-5 flex items-center">
+              <image :src="getImage('likeGray')" class="h-3" mode="heightFix" />
+              <view class="color-#999 ml-1">{{ item.likeNum }}</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="mt-2 text-3.5">
+          <view v-for="(cItem, cIndex) in item.content" :key="cIndex">{{ cItem }}</view>
+        </view>
+        <view class="mt-3 grid grid-cols-3 gap-3">
+          <view v-for="(cItem, cIndex) in item.imageList" :key="cIndex">
+            <image :src="cItem" class="w-full" mode="widthFix" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 他的口味 -->
+    <view class="mx-5 mt-3 bg-#f2f2f2 py-2 px-3">
+      <view class="flex justify-between items-center">
+        <view>
+          <view class="text-3 line-height-5">TA的口味</view>
+          <view class="color-#999 text-2.5">210人品尝</view>
+        </view>
+        <view class="bg-#1a1a1a color-#fff text-3 line-height-5 px-4.5 py-1.25">点同款</view>
+      </view>
+
+      <view class="text-2.5 color-#999 mt-2">推荐(少冰),推荐甜度(少甜),专用「品茗管」</view>
+    </view>
+
+    <view class="mt-10 px-5 py-4 b-0 b-t b-solid b-#EDEDED">
+      <view class="flex justify-between items-center">
+        <view class="flex justify-between items-center">
+          <image :src="getImage('heart')" class="h-4.5" mode="heightFix" />
+          <view class="ml-1 text-3 color-#999">保存口味</view>
+        </view>
+        <view class="flex justify-between items-center">
+          <image :src="getImage('reduceRadio')" class="w-5 h-5" />
+          <view class="mx-2">1</view>
+          <image :src="getImage('addRadio')" class="w-5 h-5" />
+        </view>
+      </view>
+
+      <view class="mt-5 flex">
+        <view class="flex-1 b-1 b-solid b-#999 flex justify-center items-center py-3">
+          <view class="flex items-baseline">
+            <view class="text-2">¥</view>
+            <view class="text-4">15</view>
+          </view>
+          <view class="ml-0.5 text-3">原价购买</view>
+        </view>
+        <view
+          class="py-3 flex-1 flex ml-2 justify-center items-center bg-[linear-gradient(90deg,#F6BE8D_1%,#F8CF97_100%)] color-#522200"
+        >
+          <view class="flex items-baseline">
+            <view class="text-2">¥</view>
+            <view class="text-4">13</view>
+          </view>
+          <view class="text-2 color-#522200/40 px-1 line-through">¥15</view>
+          <image :src="getImage('goldCouponCardImg1')" class="w-4 h-4" />
+          <view class="ml-0.5">金喜价</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="pb-safe"></view>
   </view>
 </template>
 

@@ -49,6 +49,7 @@ function clickHomeIcon() {
       <view class="flex-1"></view>
       <view
         class="h-8 border-#999 border border-solid px-3 rounded-full flex justify-center items-center"
+        :class="[PLATFORM.isH5 ? 'absolute right-5' : '']"
       >
         <image :src="getImage('print')" class="h-3" mode="heightFix" />
         <text class="ml-1">开发票</text>
