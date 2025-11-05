@@ -136,9 +136,6 @@ const userMessageList = ref([
 <template>
   <view class="">
     <view class="bg-#060606/90 pb-15">
-      <!-- <view :style="{ height: navBarInfo.height + 'px' }">
-        <view :class="[`pt-${navBarInfo.statusHeight}`]" />
-      </view> -->
       <Navbar
         bg-color="transparent"
         :bottom-shadow="false"
@@ -147,7 +144,7 @@ const userMessageList = ref([
         @click-back-icon="clickBackIcon"
         @click-home-icon="clickHomeIcon"
       />
-      <view :class="[PLATFORM.isH5 ? 'pt-12' : `pt-[${navBarInfo.height}px]`]">
+      <view class="pt-3">
         <view class="h-16 flex flex-nowrap overflow-auto">
           <image
             v-for="(item, index) in bannerList"
