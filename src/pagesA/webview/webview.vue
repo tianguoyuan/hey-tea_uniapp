@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 const url = ref('')
 onLoad((query) => {
-  console.log('query', query)
   url.value = decodeURIComponent(query.url)
-  console.log('url', url)
+  console.log('query, url', query, url.value)
 })
 </script>
 

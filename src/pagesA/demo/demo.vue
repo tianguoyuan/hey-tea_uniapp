@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { getImage } from '@/utils/imageManager'
 import { useAppStore } from '@/store/app'
+import { calcSize } from '@/utils'
 
 const appStore = useAppStore()
 const list = [
@@ -8,6 +9,8 @@ const list = [
   { img: getImage('orderBanner2') },
   { img: getImage('orderBanner3') },
 ]
+
+const scrollLeftSize = calcSize(90)
 </script>
 
 <template>
@@ -20,7 +23,7 @@ const list = [
     <scroll-view
       scroll-x
       class="overflow-x-auto snap-x snap-mandatory no-scrollbar"
-      scroll-left="100"
+      :scroll-left="scrollLeftSize"
     >
       <view class="flex flex-nowrap items-center">
         <view v-for="(item, i) in list" :key="i" class="w-[50%] shrink-0 mr-3 snap-center">
