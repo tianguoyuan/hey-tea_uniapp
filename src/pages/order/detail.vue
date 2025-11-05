@@ -141,14 +141,13 @@ const userMessageList = ref([
       </view> -->
       <Navbar
         bg-color="transparent"
-        :placeholder="false"
         :bottom-shadow="false"
         show-back-icon
         show-home-icon
         @click-back-icon="clickBackIcon"
         @click-home-icon="clickHomeIcon"
       />
-      <view :class="[PLATFORM.isH5 ? 'pt-12' : 'pt-3.75']">
+      <view :class="[PLATFORM.isH5 ? 'pt-12' : `pt-[${navBarInfo.height}px]`]">
         <view class="h-16 flex flex-nowrap overflow-auto">
           <image
             v-for="(item, index) in bannerList"
