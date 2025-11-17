@@ -96,7 +96,7 @@ const rXImageList = ref([
 {
   layout: 'default',
   style: {
-    navigationBarTitleText: '',
+    navigationBarTitleText: '百货',
     navigationStyle: 'custom',
   },
 }

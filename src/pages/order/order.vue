@@ -421,7 +421,7 @@ function pageToDetail(id) {
 {
   layout: 'default',
   style: {
-    navigationBarTitleText: '',
+    navigationBarTitleText: '点单',
     navigationStyle: 'custom',
   },
 }

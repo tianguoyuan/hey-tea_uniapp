@@ -353,7 +353,7 @@ const userMessageList = ref([
   layout: 'default',
   style: {
     navigationStyle: 'custom',
-    navigationBarTitleText: '',
+    navigationBarTitleText: '详情',
   },
 }
 </route>

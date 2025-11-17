@@ -92,7 +92,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "百货",
         "navigationStyle": "custom"
       }
     },
@@ -102,7 +102,7 @@
       "layout": "default",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": ""
+        "navigationBarTitleText": "详情"
       }
     },
     {
@@ -110,7 +110,7 @@
       "type": "page",
       "layout": "default",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "点单",
         "navigationStyle": "custom"
       }
     },
