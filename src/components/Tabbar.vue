@@ -39,7 +39,7 @@ const tabbarList = [
     activeIcon: getImage('userActive'),
     path: '/pages/user/user',
   },
-]
+] as const
 type PathType = (typeof tabbarList)[number]['path']
 const props = withDefaults(
   defineProps<{
