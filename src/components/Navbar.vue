@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { PageEnum } from '@/enums/PageEnum'
 import TnIcon from '@tuniao/tnui-vue3-uniapp/components/icon/src/icon.vue'
 import TnNavbar from '@tuniao/tnui-vue3-uniapp/components/navbar/src/navbar.vue'
 
@@ -14,6 +15,8 @@ const props = withDefaults(
     frosted: boolean
     opacity: number
     placeholder: boolean
+    clickBackIcon?: () => void
+    clickHomeIcon?: () => void
   }>(),
   {
     title: '',
@@ -29,12 +32,31 @@ const props = withDefaults(
   },
 )
 
-const emits = defineEmits<{
-  clickBackIcon: []
-  clickHomeIcon: []
-}>()
-
 const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
+
+function handleClickBackIcon() {
+  if (props.clickBackIcon) {
+    props.clickBackIcon()
+  } else {
+    if (getCurrentPages().length <= 1) {
+      uni.reLaunch({ url: PageEnum.HOME_PATH })
+    } else {
+      uni.navigateBack({
+        fail: () => {
+          uni.reLaunch({ url: PageEnum.HOME_PATH })
+        },
+      })
+    }
+  }
+}
+
+function handleClickHomeIcon() {
+  if (props.clickHomeIcon) {
+    props.clickHomeIcon()
+  } else {
+    uni.reLaunch({ url: PageEnum.HOME_PATH })
+  }
+}
 </script>
 
 <template>
@@ -68,7 +90,7 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
           name="left-arrow"
           color="#fff"
           :custom-class="[props.showBackIcon && props.showHomeIcon ? 'flex-1' : ''].join(' ')"
-          @click="emits('clickBackIcon')"
+          @click="handleClickBackIcon"
         />
         <view
           v-if="props.showBackIcon && props.showHomeIcon"
@@ -79,7 +101,7 @@ const showLeftBox = computed(() => props.showBackIcon || props.showHomeIcon)
           name="home-capsule-fill"
           color="#fff"
           :custom-class="[props.showBackIcon && props.showHomeIcon ? 'flex-1' : ''].join(' ')"
-          @click="emits('clickHomeIcon')"
+          @click="handleClickHomeIcon"
         />
       </view>
     </template>
