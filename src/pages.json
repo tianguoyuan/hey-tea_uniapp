@@ -1,7 +1,7 @@
 {
   "globalStyle": {
     "navigationStyle": "default",
-    "navigationBarTitleText": "喜茶app",
+    "navigationBarTitleText": "uniapp",
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFFFFF"
@@ -61,33 +61,6 @@
       }
     },
     {
-      "path": "pages/index/coupon",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "喜卡"
-      }
-    },
-    {
-      "path": "pages/index/exchangeCoupon",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "兑换喜卡"
-      }
-    },
-    {
-      "path": "pages/index/payCouponCityMore",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "城市系列"
-      }
-    },
-    {
       "path": "pages/market/market",
       "type": "page",
       "layout": "default",
@@ -97,48 +70,12 @@
       }
     },
     {
-      "path": "pages/order/detail",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "详情"
-      }
-    },
-    {
       "path": "pages/order/order",
       "type": "page",
       "layout": "default",
       "style": {
         "navigationBarTitleText": "点单",
         "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/user/happyMoneyBag",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "喜钱袋"
-      }
-    },
-    {
-      "path": "pages/user/myOrder",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "custom",
-        "navigationBarTitleText": "我的订单"
-      }
-    },
-    {
-      "path": "pages/user/pointsMall",
-      "type": "page",
-      "layout": "default",
-      "style": {
-        "navigationStyle": "default",
-        "navigationBarTitleText": "积分商城"
       }
     },
     {
@@ -160,7 +97,7 @@
           "type": "page",
           "layout": "default",
           "style": {
-            "navigationStyle": "default",
+            "navigationStyle": "custom",
             "navigationBarTitleText": "demo"
           }
         },

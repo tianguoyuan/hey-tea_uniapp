@@ -6,15 +6,8 @@
 interface NavigateToOptions {
   url: "/pages/index/index" |
        "/pages/goldCoupon/goldCoupon" |
-       "/pages/index/coupon" |
-       "/pages/index/exchangeCoupon" |
-       "/pages/index/payCouponCityMore" |
        "/pages/market/market" |
-       "/pages/order/detail" |
        "/pages/order/order" |
-       "/pages/user/happyMoneyBag" |
-       "/pages/user/myOrder" |
-       "/pages/user/pointsMall" |
        "/pages/user/user" |
        "/pagesA/demo/demo" |
        "/pagesA/webview/webview";

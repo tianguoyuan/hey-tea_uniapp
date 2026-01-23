@@ -1,36 +1,43 @@
 <script lang="ts" setup>
-import { getImage } from '@/utils/imageManager'
+import Navbar from '@/components/Navbar.vue'
+import { PageEnum } from '@/enums/PageEnum'
+import { StyleEnum } from '@/enums/StyleEnum'
 import { useAppStore } from '@/store/app'
-import { calcSize } from '@/utils'
+import { useUniAppSystemRectInfo } from '@tuniao/tnui-vue3-uniapp/hooks'
 
+const { navBarInfo } = useUniAppSystemRectInfo()
 const appStore = useAppStore()
-const list = [
-  { img: getImage('orderBanner1') },
-  { img: getImage('orderBanner2') },
-  { img: getImage('orderBanner3') },
-]
 
-const scrollLeftSize = calcSize(90)
+console.log('navBarInfo', navBarInfo)
+
+function clickHomeIcon() {
+  uni.reLaunch({ url: PageEnum.HOME_PATH })
+}
+function clickBackIcon() {
+  uni.navigateBack({
+    fail: (err) => {
+      console.log('err', err)
+      clickHomeIcon()
+    },
+  })
+}
 </script>
 
 <template>
   <view
-    class="bg-#efefef"
-    :style="{ 'min-height': `calc(${appStore.systemScreenHeight}px - 90rpx)` }"
+    class="bg-#9f9f9f"
+    :style="{
+      'min-height': `${appStore.systemScreenHeight}px`,
+    }"
   >
-    <view>demo</view>
-
-    <scroll-view
-      scroll-x
-      class="overflow-x-auto snap-x snap-mandatory no-scrollbar"
-      :scroll-left="scrollLeftSize"
-    >
-      <view class="flex flex-nowrap items-center">
-        <view v-for="(item, i) in list" :key="i" class="w-[50%] shrink-0 mr-3 snap-center">
-          <image :src="item.img" class="w-full rounded-3xl" mode="widthFix" />
-        </view>
-      </view>
-    </scroll-view>
+    <Navbar
+      title="Demo"
+      show-back-icon
+      show-home-icon
+      @click-back-icon="clickBackIcon"
+      @click-home-icon="clickHomeIcon"
+    />
+    <view>demo - page</view>
   </view>
 </template>
 
@@ -42,7 +49,7 @@ const scrollLeftSize = calcSize(90)
 {
   layout: 'default',
   style: {
-    navigationStyle: 'default',
+    navigationStyle: 'custom',
     navigationBarTitleText: 'demo',
   },
 }

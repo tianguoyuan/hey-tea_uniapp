@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { ColorEnum } from '@/enums/ColorEnum'
 import TnTabbar from '@tuniao/tnui-vue3-uniapp/components/tabbar/src/tabbar.vue'
 import TnTabbarItem from '@tuniao/tnui-vue3-uniapp/components/tabbar/src/tabbar-item.vue'
 import { useTabbarStore } from '@/store/tabbar'
 import { getImage } from '@/utils/imageManager'
 import PLATFORM from '@/utils/platform'
+import { StyleEnum } from '@/enums/StyleEnum'
 
 const tabbarStore = useTabbarStore()
 
@@ -71,7 +71,7 @@ function pageTo(index: number) {
     v-if="!tabbarStore.hideTabbar"
     :model-value="tabbarStore.tabbarIndex"
     fixed
-    :bg-color="ColorEnum.MAIN_COLOR"
+    :bg-color="StyleEnum.MAIN_COLOR"
     active-color="#000"
     safe-area-inset-bottom
     :top-shadow="props.topShadow"
