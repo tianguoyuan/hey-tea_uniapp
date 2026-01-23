@@ -178,7 +178,7 @@ export const getEnvBaseUploadUrl = () => {
 }
 
 export const getSafeArea = () => {
-  const system = uni.getSystemInfoSync()
+  const system = uni.getWindowInfo()
   return {
     statusBarHeight: system.statusBarHeight,
     safeArea: system.safeArea,
@@ -194,7 +194,7 @@ export const getNavbarTop = () => {
 // 计算px再不同尺寸
 export function calcSize(baseSize = 90, designWidth = 375) {
   // 获取屏幕信息
-  const systemInfo = uni.getSystemInfoSync()
+  const systemInfo = uni.getWindowInfo()
   const screenWidth = systemInfo.screenWidth
 
   // 计算在当前屏幕下的尺寸
