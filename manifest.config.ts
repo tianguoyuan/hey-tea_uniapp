@@ -113,10 +113,17 @@ export default defineManifestConfig({
   'mp-weixin': {
     appid: VITE_WX_APPID,
     setting: {
-      urlCheck: false,
+      es6: true,
+      enhance: true,
+      swc: true,
+
+      urlCheck: true,
+      autoAudits: true,
+      postcss: true,
       minified: true,
-      minifyWXML: true,
       minifyWXSS: true,
+      minifyWXML: true,
+      uglifyFileName: true,
       ignoreDevUnusedFiles: true,
     },
     usingComponents: true,

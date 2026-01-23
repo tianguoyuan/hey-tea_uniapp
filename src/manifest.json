@@ -85,10 +85,16 @@
   "mp-weixin": {
     "appid": "wx0fd9bfec39c98569",
     "setting": {
-      "urlCheck": false,
+      "urlCheck": true,
+      "es6": true,
+      "enhance": true,
+      "swc": true,
+      "autoAudits": true,
+      "postcss": true,
       "minified": true,
-      "minifyWXML": true,
       "minifyWXSS": true,
+      "minifyWXML": true,
+      "uglifyFileName": true,
       "ignoreDevUnusedFiles": true
     },
     "usingComponents": true
