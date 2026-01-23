@@ -9,13 +9,9 @@ onLaunch((options) => {
   console.log('App Launch', options)
   // 首次进入判断页面是否需要登录
   navigateToInterceptor.invoke({ url: '/' + options.path })
-
-  uni.getSystemInfo({
-    success: function (res) {
-      console.log('屏幕高度：', res.screenHeight)
-      appStore.changeSystemScreenHeight(res.screenHeight)
-    },
-  })
+  const windowInfo = uni.getWindowInfo()
+  console.log('屏幕高度：', windowInfo.screenHeight)
+  appStore.changeSystemScreenHeight(windowInfo.screenHeight)
 })
 onReady(() => {})
 onShow(() => {
