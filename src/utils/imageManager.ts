@@ -5,8 +5,9 @@
 
 // SVG 图标资源导入 - 从 static/icons 目录导入
 import PLATFORM from './platform'
-const imageNames = [
-  // Tabbar 图标
+
+// Tabbar 图标
+const tabbarImage = [
   'home',
   'homeActive',
   'market',
@@ -18,6 +19,10 @@ const imageNames = [
   'goldCoupon',
   'goldCouponActive',
 ] as const
+
+const commonImage = [] as const
+
+const imageNames = [...tabbarImage, ...commonImage] as const
 
 const isHttpImage = PLATFORM.isMp
 const imageBaseUrl = 'https://het-tea-uniapp.netlify.app'
@@ -32,5 +37,8 @@ type ImageName = (typeof imageNames)[number]
  * @returns 图片URL或导入的资源
  */
 export const getImage = (imageName: ImageName, suffix = '.svg'): string => {
-  return (isHttpImage ? imageBaseUrl : '') + `/static/icons/${imageName}${suffix}`
+  // tabbar图片使用本地
+  if (tabbarImage.includes(imageName)) return `/static/icons/${imageName + suffix}`
+
+  return (isHttpImage ? imageBaseUrl : '') + `/static/icons/${imageName + suffix}`
 }
