@@ -1,12 +1,26 @@
+## 使用到的资源
+
+[莫高设计](https://mastergo.com/community/resource/126837709839912?from=card) https://mastergo.com
+
+[喜茶/临摹设计](https://mastergo.com/community/resource/126837709839912?from=card) https://mastergo.com/community/resource/126837709839912?from=card
+
 ## 预览
 
 [h5](https://het-tea-uniapp.netlify.app/)
 
 <table align="center">
+
 <tr>
   <td><img width="160" src="./screenshots/h5.png"></td>
   <td><img width="160" src="./screenshots/android.png"></td>
   <td><img width="160" src="./screenshots/wechat.png"></td>
+</tr>
+<tr>
+  <td><img width="" src="./screenshots/screenshot1.png"></td>
+  <td><img width="" src="./screenshots/screenshot2.png"></td>
+  <td><img width="" src="./screenshots/screenshot3.png"></td>
+  <td><img width="" src="./screenshots/screenshot4.png"></td>
+  <td><img width="" src="./screenshots/screenshot5.png"></td>
 </tr>
 </table>
 
